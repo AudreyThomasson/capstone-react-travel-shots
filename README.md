@@ -8,6 +8,12 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Start JSON Server
+Go to api folder.
+json-server -p 8088 -w database.json
+
+on main folder
+npm i --save react-router-dom
 ## Available Scripts
 
 In the project directory, you can run:
