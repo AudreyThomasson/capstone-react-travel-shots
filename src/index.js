@@ -7,7 +7,9 @@ import { TravelShots } from './TravelShots'
 
 ReactDOM.render(
   <React.StrictMode>
-    <TravelShots />
+    <Router>
+      <TravelShots />
+    </Router>
   </React.StrictMode>,
   document.getElementById('root')
 );
