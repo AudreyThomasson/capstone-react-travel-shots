@@ -18,7 +18,9 @@ export const TravelShots = () => (
             } else {
                 return <Redirect to="/login" />
             }
-        }}></Route>
+        }}>
+        </Route>
+        
         <Route path="/login">
             <Login />
         </Route>
