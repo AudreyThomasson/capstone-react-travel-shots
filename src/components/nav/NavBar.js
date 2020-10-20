@@ -1,7 +1,6 @@
-import React from 'react'
-import { Input, Menu, Dropdown } from 'semantic-ui-react'
+import React, { useContext, useRef, useEffect } from 'react'
+import { Input, Menu } from 'semantic-ui-react'
 import { Link } from "react-router-dom"
-import { LocationContext } from "../location/LocationProvider"
 
 const menuStyle = {
     border: 'none',
@@ -14,11 +13,8 @@ const menuStyle = {
     // transition: 'box-shadow 0.5s ease, padding 0.5s ease',
   }
 
-
   
 export const NavBar = (props) => {
-  
-    const { locations, getLocations } = useContext(LocationContext)
 
     return (
 
@@ -30,19 +26,6 @@ export const NavBar = (props) => {
                     name='Home'
                     as={Link} to='/'
                 />
-                    <Dropdown text='View by Trip Name' pointing className='link item' value="0">
-                        <Dropdown.Menu>
-                            <Dropdown.Item
-                                options={locations.map(l => {
-                                    return {
-                                        key: l.id,
-                                        name: l.name,
-                                        value: l.id
-                                    }
-                                    })}
-                            />
-                        </Dropdown.Menu>
-                    </Dropdown>
 
                 <Menu.Item
                     name='Add Photo'
