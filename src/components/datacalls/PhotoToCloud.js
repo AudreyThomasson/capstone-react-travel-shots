@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-
+import { Form, Input, Button, Image } from 'semantic-ui-react'
 import { Link } from 'react-router-dom';
-import NavBar from '../nav/Navbar'
 
-
+// This uploads the image to Cloudinary and places the Cloudinary url into
+// sessionStorage to be used by the next part of the form. Then it calls the second part of the Add Photo Form
 export const UploadImage  = props => {
     
     
@@ -16,9 +16,9 @@ export const UploadImage  = props => {
         setImageLoading(true)
         const data = new FormData()
         data.append('file', files[0])
-        data.append('upload_preset', 'recipes')
+        data.append('upload_preset', 'darwin')
         const res = await fetch(
-            'https://api.cloudinary.com/v1_1/kingamandarae/image/upload', 
+            'https://api.cloudinary.com/v1_1/audreyrt/image/upload', 
             {
                 method: "POST",
                 body: data
@@ -35,52 +35,29 @@ export const UploadImage  = props => {
 
     return (
         <>
-       
-        <div className="imageContainer">
-       <Row className="imageUpload">
-           <Col sm={4} className="OCRCol">
-           <h4 className="OCRText">Upload Image to Return as Text</h4>
-           <Form>
-           <Form.Group>
-           <Form.File 
-           className="OCRInput"
-           type="file"
-           name="file"
-           placeholder="Upload an Image"
-           onChange={uploadImage}
-           />
-           </Form.Group>
-           </Form>
-           {/* </Col>
-           <Col className="returnCol"> */}
-           {loading ? (
-               <h6 className="loadingOCR">Loading...</h6>
-           ): <p className="ocrReturnText">{sessionStorage.text}</p>}
-           </Col>
-            {/* </Row>
-            <Row className="imageUpload"> */}
-            <Col sm={4} className="imageCol">
-           <h4 className="imageText">Upload Recipe Image</h4>
-           <input 
-           className="imageInput"
-           type="file"
-           name="file"
-           placeholder="Upload an Image"
-           onChange={uploadTravelImage}
-           />
-           {/* </Col>
-           <Col> */}
-           {imageLoading ? (
-               <h6 className="loadingImage">Loading...</h6>
-           ): <Image src={(sessionStorage.recipeImage)} className="recipeImage" style={{ width: "350px", height: "350px" }} />}
-           </Col>
-           <Col>
-           <Link to={(`/recipes/NewFinish`)}>
-                <Button variant="custom" className="continueRecipeButton">Continue</Button>
+            <Form>
+                <h4 className="imageText">Upload Inspiration Image</h4>
+                <Form.Field required>
+                <label>Upload a JPEG or PNG file from your computer</label>
+                {/* <Input placeholder='upload from your computer' /> */}
+                    <input 
+                    className="imageInput"
+                    type="file"
+                    name="file"
+                    placeholder="Upload an Image"
+                    onChange={uploadTravelImage}
+                    />
+                </Form.Field>
+            </Form>
+            
+
+            {imageLoading ? (
+                <h6 className="loadingImage">Loading...</h6>
+            ): <Image src={(sessionStorage.travelImage)} className="travelImage" style={{height: "350px" }} />}
+
+            <Link to={(`/add/NewFinish`)}>
+                <Button variant="custom" className="continueTravelButton">Continue</Button>
             </Link>
-           </Col>
-           </Row>    
-   </div>
    </>
     )
 }
