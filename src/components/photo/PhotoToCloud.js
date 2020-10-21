@@ -1,14 +1,12 @@
 import React, { useState } from 'react'
-import { Form, Grid, Header, Segment, Message, Button, Image } from 'semantic-ui-react'
+import { Form, Grid, Header, Segment, Button, Image } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
-import { BlankImage } from '.../public/images/BlankImage.png'
+import BlankImage from '../../images/BlankImage.png'
 
 // This uploads the image to Cloudinary and places the Cloudinary url into
 // sessionStorage to be used by the next part of the form. Then it calls the second part of the Add Photo Form
 export const UploadImage  = props => {
     
-    
-    const [loading, setLoading] = useState(false)
     const [imageLoading, setImageLoading] = useState(false)
 
    
@@ -33,32 +31,46 @@ export const UploadImage  = props => {
        
         setImageLoading(false)
     }
+ 
 
     return (
         <>
-            <Grid textAlign='center' style={{ height: '100vh' }} verticalAlign='middle'>
+            <Grid textAlign='center' style={{ height: '100vh' }} verticalAlign='top'>
                 <Grid.Column style={{ maxWidth: 450 }}>
                 <Header as='h2' color='teal' textAlign='center'>
                     Upload Inspiration Image
                 </Header>
                 <Form size='large'>
                     <Segment stacked>
+            
+                    <div className='defaultImage'> 
+                        <Image src={ sessionStorage.travelImage ? sessionStorage.travelImage : BlankImage } size='medium' centered />
+                    </div>
                     
-                    <Image src={ BlankImage } size='medium' disabled />
+                    {imageLoading ? (
+                        <h6 className="loadingImage">Loading...</h6>
+                            ): <></>}
                     
 
-                    <label for="embedpollfileinput" class="ui huge teal button">
-                        <i class="ui upload icon"></i> 
+                    <br/>
+                    <label htmlFor="embedpollfileinput" className="ui huge teal button">
+                        <i className="ui upload icon"></i> 
                         Upload image
                         </label>
-                        <input hidden type="file" onChange={uploadTravelImage} class="inputfile" id="embedpollfileinput" />
+                        <input hidden type="file" onChange={uploadTravelImage} className="inputfile" id="embedpollfileinput" />
 
-                 
-                    </Segment>
+                </Segment>
                 </Form>
-                <Message>
-                    <a href='#'>Cancel</a>
-                </Message>
+                 
+                <br/>
+                <Link to={(`/home`)}>
+                    <Button variant="custom" className="cancelButton">Cancel</Button>
+                </Link>
+                <Link to={(`/add/NewFinish`)}>
+                    <Button variant="custom" className="continueTravelButton">Continue</Button>
+                </Link>
+
+
                 </Grid.Column>
             </Grid>
 
@@ -87,13 +99,6 @@ export const UploadImage  = props => {
             </Form>  */} 
             
 
-            {imageLoading ? (
-                <h6 className="loadingImage">Loading...</h6>
-            ): <Image src={(sessionStorage.travelImage)} className="travelImage" style={{height: "350px" }} />}
-
-            <Link to={(`/add/NewFinish`)}>
-                <Button variant="custom" className="continueTravelButton">Continue</Button>
-            </Link>
    </>
     )
 }
