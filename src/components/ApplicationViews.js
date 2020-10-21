@@ -1,7 +1,7 @@
 import React from "react"
 import { Route } from "react-router-dom"
 // import { Home } from "./Home"
-import { UploadImage } from "./datacalls/PhotoToCloud"
+import { UploadImage } from "./photo/PhotoToCloud"
 // import { AddForm } from "./photo/PhotoForm"
 
 
