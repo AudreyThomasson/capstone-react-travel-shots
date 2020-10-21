@@ -31,6 +31,10 @@ export const NavBar = (props) => {
                     name='Add Photo'
                     as={Link} to='/add'
                 />
+
+                {/* <Menu.Item name='Add Photo' as={Link} to='/add'/> */}
+
+
                 <Menu.Item
                 name='Browse for Inspiration'
                     as={Link} to='/browse'
