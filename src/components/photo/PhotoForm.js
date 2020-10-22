@@ -168,7 +168,7 @@ export const PhotoForm = () => {
                     </Form>
                     
                     <br/>
-                    <Link to={(`/home`)}>
+                    <Link to={(`/`)}>
                         <Button 
                             variant="custom" 
                             className="cancelButton"

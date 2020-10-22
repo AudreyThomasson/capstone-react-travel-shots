@@ -65,7 +65,7 @@ export const UploadImage = props => {
                 </Form>
                  
                 <br/>
-                <Link to={(`/home`)}>
+                <Link to={(`/`)}>
                     <Button 
                         variant="custom" 
                         className="cancelButton"

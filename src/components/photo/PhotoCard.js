@@ -1,20 +1,16 @@
 import React from "react"
 import { Card } from 'semantic-ui-react'
+import { Link } from "react-router-dom"
 
-const extra = (
-    <>
-        'added by {shot.origSaverId.username}'
-    </>
-  )
 
 export const PhotoCard = ({shot}) => (
     <Card
-        link={'/home/detail/${shot.id}'}
+        as={Link} to='/home/detail/${shot.id}'
         image={shot.photoUrl}
         header={shot.photoTitle}
         description={shot.notes}
         meta='Saved from {shot.sourceUrl}'
-        extra={extra}
+        extra='added by {shot.origSaverId.username}'
         color='blue'
         raised
     />

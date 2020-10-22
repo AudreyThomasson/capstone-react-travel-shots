@@ -5,21 +5,21 @@ import { UploadImage } from "./photo/PhotoToCloud"
 import { PhotoForm } from "./photo/PhotoForm"
 import { PhotoProvider } from "./photo/PhotoProvider"
 import { LocationProvider } from "./location/LocationProvider"
-// import { PhotoList } from "./photo/PhotoList"
+import { PhotoList } from "./photo/PhotoList"
 // import { BrowseForm } from "./photo/BrowseForm"
 // import { PhotoSearch } from "./photo/PhotoSearch"
 
 export const ApplicationViews = () => {
     return (
         <>
-            {/* Render the location list when http://localhost:3000/ */}
-            {/* <PhotoProvider>
-                <Route exact path="/home">
-                    <Home/>
+            Render the location list when http://localhost:3000/
+            <PhotoProvider>
+                <Route exact path="/">
+                    <PhotoList />
                 </Route>
             </PhotoProvider>
 
-            <LocationProvider>
+            {/* <LocationProvider>
                 <Route exact path="/locations">
                     <LocationList />
                 </Route>
