@@ -66,7 +66,13 @@ export const UploadImage = props => {
                  
                 <br/>
                 <Link to={(`/home`)}>
-                    <Button variant="custom" className="cancelButton">Cancel</Button>
+                    <Button 
+                        variant="custom" 
+                        className="cancelButton"
+                        onClick={event => {
+                            localStorage.removeItem("travelImage")
+                        }}>
+                        Cancel</Button>
                 </Link>
 
                 {localStorage.travelImage ? (
@@ -79,31 +85,6 @@ export const UploadImage = props => {
                 </Grid.Column>
             </Grid>
 
-
-
-
-{/* 
-            <Form>
-                <h4 className="imageText">Upload Inspiration Image</h4>
-                
-                <Form.Field required>
-                    {/* <Button animated='fade'>
-                        <Button.Content visible>
-                            <Button content='Upload an Image' icon='upload' labelPosition='left' />
-                        </Button.Content>
-                        <Button.Content hidden>Select a JPEG or PNG file</Button.Content>
-                    </Button> */}
-                    {/* <input 
-                        className="imageInput"
-                        type="file"
-                        name="file"
-                        placeholder="Upload an Image"
-                        onChange={uploadTravelImage}
-                    />
-                </Form.Field>
-            </Form>  */} 
-            
-
-   </>
+        </>
     )
 }

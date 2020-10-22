@@ -1,33 +1,93 @@
-import React, { useState, useContext } from 'react'
-import { Form, Grid, Header, Segment, Button, Image, TextArea } from 'semantic-ui-react'
-import { Link } from 'react-router-dom'
-import { PhotoContext } from './PhotoProvider';
+import React, { useState, useContext, useEffect } from 'react'
+import { Form, Grid, Header, Segment, Button, Image, Dropdown } from 'semantic-ui-react'
+import { Link, useHistory, useParams } from 'react-router-dom'
+import { PhotoContext } from './PhotoProvider'
+import { LocationContext } from '../location/LocationProvider'
 
-export const PhotoForm = props => {
-    const {addShot} = useContext(PhotoContext)
+export const PhotoForm = () => {
+    const { addShot , getShotById, updateShot } = useContext(PhotoContext)
+    const { locations, getLocations } = useContext(LocationContext)
 
+    // ({userId:+(localStorage.activeUser), origSaverId:+(localStorage.activeUser), locationId: 0, photoTitle: "", pictureUrl: localStorage.travelImage, sourceUrl: "", notes: "", done: false});
+    const [shot, setShot] = useState({})
+    const [location, setLocation] = useState({})
+    const [isLoading, setIsLoading] = useState(true);
+    
+    const { shotId } = useParams();
+    const history = useHistory();
 
-    // const [image, setImage] = useState([]);
-    // const [loading, setLoading] = useState(false)
-    const [shot, setShot] = useState({userId:+(localStorage.activeUser), origSaverId:+(localStorage.activeUser), locationId: 0, photoTitle: "", pictureUrl: localStorage.travelImage, sourceUrl: "", notes: "", done: false});
-    const [isLoading, setIsLoading] = useState(false);
-
+    // const locationOptions = (locations) => {
+    //     const allLocations = locations.map(l => (
+    //         key={l.id},
+    //         value={l.id},
+    //         name={l.name}
+    //         )
+    //     )}
+    //     return allLocations
+    // }
 
     const handleFieldChange = event => {
-        const newShot = {...shot}
-        newShot[event.target.controlId] = event.target.value;
+        const newShot = { ...shot }
+        newShot[event.target.name] = event.target.value;
         setShot(newShot)
-    }; 
-            
+    } 
 
-    const constructNewShot = event => {
-        event.preventDefault();
-        if (shot.photoTitle === "" || shot.sourceUrl === "" || shot.notes === "") {
+    const handleDropdown = (event, data)=> {
+        console.log(data)
+        const newShot = { ...shot }
+        newShot[data.name] = data.value
+        setShot(newShot)
+    }
+
+    // Get location folder names. If shotId is in the URL, getShotById
+    useEffect(() => {
+        getLocations().then(()=> {
+            if (shotId){
+                getShotById(shotId)
+                .then(shot => {
+                    setShot(shot)
+                    setIsLoading(false)
+                })
+            } else {
+                setIsLoading(false)
+            }
+        })
+    }, [])
+        
+
+    const constructNewShot = () => {
+        if (shot.photoTitle === "" || shot.sourceUrl === "" || shot.notes === "" || +(shot.locationId) === 0 ) {
             alert("Please complete all fields")
         } else {
             setIsLoading(true);
-            addShot("shots", shot)
-            .then(() => props.history.push("/home"))
+            if (shotId){
+                //PUT - update
+                updateShot({
+                    id: shot.id,
+                    userId: shot.userId,
+                    origSaverId: shot.origSaverId, 
+                    locationId: shot.locationId,
+                    photoTitle: shot.photoTitle,
+                    pictureUrl: shot.pictureUrl,
+                    sourceUrl: shot.sourceUrl, 
+                    notes: shot.notes, 
+                    done: false
+                })
+                .then(() => history.push(`/home/detail/${shot.id}`))
+            }else {
+                //POST - add
+                addShot({
+                    userId:+(localStorage.activeUser),
+                    origSaverId:+(localStorage.activeUser), 
+                    locationId: shot.locationId,
+                    photoTitle: shot.photoTitle,
+                    pictureUrl: localStorage.travelImage,
+                    sourceUrl: shot.sourceUrl, 
+                    notes: shot.notes, 
+                    done: false
+                })
+                .then(() => history.push(`/home/detail/${shot.id}`))
+            }
         }
         
     }
@@ -40,7 +100,7 @@ export const PhotoForm = props => {
                 <Grid.Column style={{ maxWidth: 455 }}>
                     <br/>
                     <Header as='h2' color='blue' textAlign='center'>
-                        Enter Information to Save
+                        {shotId ? 'Edit Information' : 'Enter Information to Save'}  
                     </Header>
                     
                     
@@ -53,25 +113,43 @@ export const PhotoForm = props => {
                         </div>                   
                         <br/>
                         <Form.Input
-                            fluid
-                            label='Photo Title'
+                            // fluid
+                            label='Photo Title:'
                             placeholder='Photo Title'
-                            controlId='photoTitle'
-                            onChange={handleFieldChange}
+                            name='photoTitle'
+                            onChange={(event) => handleFieldChange(event)}
+                            required
+                            autoFocus
+                            defaultValue={shot?.photoTitle}
+                            />
+                        <Dropdown
+                            fluid
+                            placeholder='Select a Location Folder'
+                            selection
+                            name='location'
+                            label='Locations'
+                            options={locations.name}
+                            defaultValue={shot?.locationId}
+                            onChange={handleDropdown}
                             />
                         <Form.Input
-                            fluid
+                            // fluid
                             label='Source Website/Url'
                             placeholder='Source Website/Url'
-                            controlId='sourceUrl'
-                            onChange={handleFieldChange}
+                            name='sourceUrl'
+                            onChange={(event) => handleFieldChange(event)}
+                            required
+                            autoFocus
+                            defaultValue={shot?.sourceUrl}
                         />
-                        <Form.Field
-                            control={TextArea}
+                        <Form.TextArea
                             label='Notes'
                             placeholder='Save some notes for this idea...'
-                            controlId='notes'
-                            onChange={handleFieldChange}
+                            name='notes'
+                            onChange={(event) => handleFieldChange(event)}
+                            required
+                            autoFocus
+                            defaultValue={shot?.notes}
                         />
                         
                         </Segment>
@@ -79,16 +157,27 @@ export const PhotoForm = props => {
                     
                     <br/>
                     <Link to={(`/home`)}>
-                        <Button variant="custom" className="cancelButton">Cancel</Button>
+                        <Button 
+                            variant="custom" 
+                            className="cancelButton"
+                            onClick={event => {
+                                localStorage.removeItem("travelImage")
+                            }}>
+                            Cancel
+                        </Button>
                     </Link>
                     
-                    <Link to={(`/home`)}>
-                        <Button 
+                    <Link to={(`/home/detail/${shot.id}`)}>
+                        <Button
+                            disabled={isLoading} 
                             variant="custom"
                             className="newShotButton"
-                            onClick={constructNewShot}
-                            type="submit">
-                            Save
+                            onClick={event => {
+                                event.preventDefault() // Prevent browser from submitting the form
+                                constructNewShot()
+                                localStorage.removeItem("travelImage")
+                            }}>
+                            {shotId ? 'Save Updates' : 'Add Shot'}
                         </Button>
                     </Link>
 
@@ -101,5 +190,3 @@ export const PhotoForm = props => {
         </>
     )
 }
-
-
