@@ -32,12 +32,12 @@ export const PhotoForm = () => {
         setShot(newShot)
     } 
 
-    const handleDropdown = (event, data)=> {
-        console.log(data)
-        const newShot = { ...shot }
-        newShot[data.name] = data.value
-        setShot(newShot)
-    }
+    // const handleDropdown = (event, data)=> {
+    //     console.log(data)
+    //     const newShot = { ...shot }
+    //     newShot[data.name] = data.value
+    //     setShot(newShot)
+    // }
 
     // Get location folder names. If shotId is in the URL, getShotById
     useEffect(() => {
@@ -109,7 +109,7 @@ export const PhotoForm = () => {
                         <Segment stacked>
                         <br/>
                         <div className='defaultImage'> 
-                            <Image src={ localStorage.travelImage } size='medium' centered />
+                            <Image src={ localStorage.travelImage ? localStorage.travelImage : shot.pictureUrl } size='medium' centered />
                         </div>                   
                         <br/>
                         <Form.Input
@@ -122,7 +122,7 @@ export const PhotoForm = () => {
                             autoFocus
                             defaultValue={shot?.photoTitle}
                             />
-                        <Dropdown
+                        {/* <Dropdown
                             fluid
                             placeholder='Select a Location Folder'
                             selection
@@ -130,8 +130,20 @@ export const PhotoForm = () => {
                             label='Locations'
                             options={locations.name}
                             defaultValue={shot?.locationId}
+                            value={locations.id}
                             onChange={handleDropdown}
-                            />
+                            >
+                            <Dropdown.Divider />
+                            <Dropdown.Header content='Add a Location Folder' />
+                                <Input name='addLocation' />
+ */}
+
+
+
+
+
+
+
                         <Form.Input
                             // fluid
                             label='Source Website/Url'
@@ -177,7 +189,7 @@ export const PhotoForm = () => {
                                 constructNewShot()
                                 localStorage.removeItem("travelImage")
                             }}>
-                            {shotId ? 'Save Updates' : 'Add Shot'}
+                            {shotId ? 'Save Updates' : 'Save Shot'}
                         </Button>
                     </Link>
 

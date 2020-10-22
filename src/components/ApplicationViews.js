@@ -39,7 +39,7 @@ export const ApplicationViews = () => {
 
             {/* <PhotoProvider>
                 <LocationProvider>
-                        <Route path="/Photos/edit/:PhotoId(\d+)">
+                        <Route path="/home/details/edit/:shotId(\d+)">
                             <PhotoForm />
                         </Route>
                 </LocationProvider>
