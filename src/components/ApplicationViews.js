@@ -2,7 +2,7 @@ import React from "react"
 import { Route } from "react-router-dom"
 // import { Home } from "./Home"
 import { UploadImage } from "./photo/PhotoToCloud"
-// import { AddForm } from "./photo/PhotoForm"
+import { PhotoForm } from "./photo/PhotoForm"
 
 
 
@@ -32,10 +32,10 @@ export const ApplicationViews = () => {
             <Route exact path="/add">
                 <UploadImage />
             </Route>
-
-            {/* <Route exact path="/add/NewFinish"> 
-                <NewPhotoForm />
-            </Route> */}
+ 
+            <Route exact path="/add/NewFinish"> 
+                <PhotoForm />
+            </Route> 
 
             {/* <PhotoProvider>
                 <LocationProvider>
