@@ -6,17 +6,33 @@ import { PhotoForm } from "./photo/PhotoForm"
 import { PhotoProvider } from "./photo/PhotoProvider"
 import { LocationProvider } from "./location/LocationProvider"
 import { PhotoList } from "./photo/PhotoList"
+import { PhotoDetail } from "./photo/PhotoDetail"
 // import { BrowseForm } from "./photo/BrowseForm"
 // import { PhotoSearch } from "./photo/PhotoSearch"
 
 export const ApplicationViews = () => {
     return (
         <>
-            Render the location list when http://localhost:3000/
             <PhotoProvider>
                 <Route exact path="/">
                     <PhotoList />
                 </Route>
+            </PhotoProvider>
+
+            {/* Details of One Shot */}
+            <PhotoProvider>
+                <Route exact path="/detail/:shotId(\d+)">
+                    <PhotoDetail />
+                </Route>
+            </PhotoProvider>
+
+
+            <PhotoProvider>
+                <LocationProvider>
+                        <Route path="/details/edit/:shotId(\d+)">
+                            <PhotoForm />
+                        </Route>
+                </LocationProvider>
             </PhotoProvider>
 
             {/* <LocationProvider>
@@ -37,13 +53,6 @@ export const ApplicationViews = () => {
                 </LocationProvider>
             </PhotoProvider>
 
-            {/* <PhotoProvider>
-                <LocationProvider>
-                        <Route path="/home/details/edit/:shotId(\d+)">
-                            <PhotoForm />
-                        </Route>
-                </LocationProvider>
-            </PhotoProvider> */}
 
 
         </>

@@ -96,7 +96,7 @@ export const PhotoForm = () => {
 
     return (
         <>
-            <Grid textAlign='left' style={{ height: '100vh' }} verticalAlign='top'>
+            <Grid textAlign='centered' style={{ height: '100vh' }} verticalAlign='top'>
                 <Grid.Column style={{ maxWidth: 455 }}>
                     <br/>
                     <Header as='h2' color='blue' textAlign='center'>

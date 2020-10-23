@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react"
 import { useHistory } from "react-router-dom"
-import { Card, Grid } from 'semantic-ui-react'
+import { Card, Header, Grid } from 'semantic-ui-react'
 import { PhotoContext } from "./PhotoProvider"
 import { PhotoCard } from "./PhotoCard"
 // import "./Photo.css"
@@ -18,6 +18,7 @@ export const PhotoList = () => {
         getShots()
     }, [])
 
+
     // useEffect dependency array with dependencies - will run if dependency changes (state)
     // searchTerms will cause a change
     useEffect(() => {
@@ -31,9 +32,15 @@ export const PhotoList = () => {
         }
     }, [searchTerms, shots])
 
+
+
     return (
         <>
-            <Card.Group itemsPerRow={5}>
+             <Header as='h2' color='blue' textAlign='center'>
+                    Your Shot Collection
+            </Header>
+            <br/>
+            <Card.Group itemsPerRow={5} stackable centered>
             <>
                 {
                 filteredShots.map(shot => {

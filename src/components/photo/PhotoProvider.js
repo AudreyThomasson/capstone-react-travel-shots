@@ -14,8 +14,7 @@ export const PhotoProvider = (props) => {
     const [ searchTerms, setSearchTerms ] = useState("")
 
     const getShots = () => {
-        return fetch("http://localhost:8088/shots")
-        // return fetch("http://localhost:8088/shots")
+        return fetch("http://localhost:8088/shots?_expand=location")
             .then(res => res.json())
             .then(setShots)
     }
