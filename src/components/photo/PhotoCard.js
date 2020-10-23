@@ -1,19 +1,18 @@
 import React from "react"
-import { Card } from 'semantic-ui-react'
+import { Card, Image } from 'semantic-ui-react'
 import { Link } from "react-router-dom"
 
 
+
 export const PhotoCard = ({shot}) => (
-    <Card
-        as={Link} to='/home/detail/${shot.id}'
-        image={shot.photoUrl}
-        header={shot.photoTitle}
-        description={shot.notes}
-        meta='Saved from {shot.sourceUrl}'
-        extra='added by {shot.origSaverId.username}'
-        color='blue'
-        raised
-    />
+
+    <Card as={Link} to='/home/detail/${shot.id}' color='blue' raised>
+
+        <Image src={shot.pictureUrl} wrapped ui={false}/>
+        <Card.Header>{shot.photoTitle}</Card.Header>
+        <Card.Description>{shot.notes}</Card.Description>
+        <Card.Meta>Source: {shot.sourceUrl}</Card.Meta>
+    </Card>
 )
 
 

@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from "react"
 import { useHistory } from "react-router-dom"
+import { Card, Grid } from 'semantic-ui-react'
 import { PhotoContext } from "./PhotoProvider"
 import { PhotoCard } from "./PhotoCard"
 // import "./Photo.css"
@@ -32,15 +33,15 @@ export const PhotoList = () => {
 
     return (
         <>
-            <h1>Photos</h1>
-
-            <div className="shots">
-				{
-				filteredShots.map(shot => {
-					return <PhotoCard key={shot.id} shot={shot} />
-				})
-				}
-			</div>
+            <Card.Group itemsPerRow={5}>
+            <>
+                {
+                filteredShots.map(shot => {
+                    return <PhotoCard key={shot.id} shot={shot} />
+                })
+                }
+            </>
+            </Card.Group>
         </>
     )
 }
