@@ -7,7 +7,7 @@ import { Link } from "react-router-dom"
 export const PhotoCard = ({shot}) => (
     <>
         <Card color='blue' raised>
-            <Image as={Link} to='/detail/${shot.id}' src={shot.pictureUrl} wrapped ui ={false}/>
+            <Image as={Link} to={`/detail/${shot.id}`} src={shot.pictureUrl} wrapped ui ={false}/>
             <Card.Header as='h4' >{shot.photoTitle}</Card.Header>
             <Card.Description>Collection: {shot.location.name}</Card.Description>
             <Card.Description href={shot.sourceUrl}>Source: link/website</Card.Description>

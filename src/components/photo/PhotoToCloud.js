@@ -77,7 +77,7 @@ export const UploadImage = props => {
 
                 {localStorage.travelImage ? (
                     <Link to={(`/add/NewFinish`)}>
-                        <Button variant="custom" className="continueTravelButton">Continue</Button>
+                        <Button color='blue' variant="custom" className="continueTravelButton">Continue</Button>
                     </Link>)
                     : (<Button disabled variant="custom" className="continueTravelButton">Continue</Button>)
                 }

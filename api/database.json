@@ -31,7 +31,6 @@
     {
       "id": 2,
       "userId": 1,
-      "origSaver": "Audrey",
       "locationId": 2,
       "photoTitle": "Tower Bridge Sign",
       "pictureUrl": "https://www.visitbritainshop.com/world/~/media/a1b4f9943a2246e0b6f37b2170b99236.ashx?as=0&h=349&w=620",
@@ -42,7 +41,6 @@
     {
       "id": 3,
       "userId": 2,
-      "origSaver": "Sarah",
       "locationId": 3,
       "photoTitle": "Mariposa Grove Trees",
       "pictureUrl": "https://www.nps.gov/yose/planyourvisit/images/mg-page.jpg?maxwidth=1200&maxheight=1200&autorotate=false",
@@ -54,18 +52,18 @@
   "locations": [
     {
       "id": 1,
-      "name": "Paris Visit"
-    //   "userId": 1
+      "name": "Paris Visit",
+      "userId": 1
     },
     {
       "id": 2,
-      "name": "London Trip"
-    //   "userId": 1
+      "name": "London Trip",
+      "userId": 1
     },
     {
       "id": 3,
-      "name": "Yosemite"
-    //   "userId": 2
+      "name": "Yosemite",
+      "userId": 2
     }
   ]
 }

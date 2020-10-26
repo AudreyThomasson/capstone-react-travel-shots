@@ -1,18 +1,18 @@
 import React from "react"
 import { Route } from "react-router-dom"
-// import { Home } from "./Home"
 import { UploadImage } from "./photo/PhotoToCloud"
-import { PhotoForm } from "./photo/PhotoForm"
 import { PhotoProvider } from "./photo/PhotoProvider"
 import { LocationProvider } from "./location/LocationProvider"
 import { PhotoList } from "./photo/PhotoList"
 import { PhotoDetail } from "./photo/PhotoDetail"
+import { PhotoForm } from "./photo/PhotoForm"
 // import { BrowseForm } from "./photo/BrowseForm"
 // import { PhotoSearch } from "./photo/PhotoSearch"
 
 export const ApplicationViews = () => {
     return (
         <>
+            {/* Home / Start Screen */}
             <PhotoProvider>
                 <Route exact path="/">
                     <PhotoList />
@@ -26,10 +26,10 @@ export const ApplicationViews = () => {
                 </Route>
             </PhotoProvider>
 
-
+            {/* Edit of a Shot */}
             <PhotoProvider>
                 <LocationProvider>
-                        <Route path="/details/edit/:shotId(\d+)">
+                        <Route path="/detail/edit/:shotId(\d+)">
                             <PhotoForm />
                         </Route>
                 </LocationProvider>
@@ -40,11 +40,13 @@ export const ApplicationViews = () => {
                     <LocationList />
                 </Route>
             </LocationProvider> */}
-            
+
+            {/* Adding own shot to collection- Part 1 */}
             <Route exact path="/add">
                 <UploadImage />
             </Route>
- 
+
+             {/* Adding own shot to collection- Part 2 */}
             <PhotoProvider>
                 <LocationProvider>
                     <Route exact path="/add/NewFinish"> 

@@ -1,12 +1,12 @@
 import React, { useState, useContext, useEffect } from 'react'
 import { Form, Grid, Header, Segment, Button, Image, Dropdown } from 'semantic-ui-react'
-import { Link, useHistory, useParams } from 'react-router-dom'
+import { useHistory, useParams } from 'react-router-dom'
 import { PhotoContext } from './PhotoProvider'
 import { LocationContext } from '../location/LocationProvider'
 
 export const PhotoForm = () => {
     const { addShot , getShotById, updateShot } = useContext(PhotoContext)
-    const { locations, getLocations } = useContext(LocationContext)
+    const { locations, getLocations, addLocation } = useContext(LocationContext)
 
     // ({userId:+(localStorage.activeUser), origSaverId:+(localStorage.activeUser), locationId: 0, photoTitle: "", pictureUrl: localStorage.travelImage, sourceUrl: "", notes: "", done: false});
     const [shot, setShot] = useState({})
@@ -16,15 +16,6 @@ export const PhotoForm = () => {
     const { shotId } = useParams();
     const history = useHistory();
 
-    // const locationOptions = (locations) => {
-    //     const allLocations = locations.map(l => (
-    //         key={l.id},
-    //         value={l.id},
-    //         name={l.name}
-    //         )
-    //     )}
-    //     return allLocations
-    // }
 
     const handleFieldChange = event => {
         const newShot = { ...shot }
@@ -33,10 +24,19 @@ export const PhotoForm = () => {
     } 
 
     // const handleDropdown = (event, data)=> {
-    //     console.log(data)
     //     const newShot = { ...shot }
-    //     newShot[data.name] = data.value
+    //     if(addLocation.value.length !== 0 && location.value === "0"){
+    //         let newLocationId = locations.length
+    //         newLocationId++
+    //     }
+    //     newShot[data.name] = newLocationId
     //     setShot(newShot)
+
+    //     const LocationToSave = {
+    //         label: addLocation.value,
+    //         userId: activeUser ? +(localStorage.activeUser) : shot.userId
+    //     }
+    //     addLocation(LocationToSave)
     // }
 
     // Get location folder names. If shotId is in the URL, getShotById
@@ -73,7 +73,7 @@ export const PhotoForm = () => {
                     notes: shot.notes, 
                     done: false
                 })
-                .then(() => history.push(`/home/detail/${shot.id}`))
+                .then(() => history.push(`/detail/${shot.id}`))
             }else {
                 //POST - add
                 addShot({
@@ -86,7 +86,7 @@ export const PhotoForm = () => {
                     notes: shot.notes, 
                     done: false
                 })
-                .then(() => history.push(`/home/detail/${shot.id}`))
+                .then(() => history.push(`/`))
             }
         }
         
@@ -96,7 +96,7 @@ export const PhotoForm = () => {
 
     return (
         <>
-            <Grid textAlign='centered' style={{ height: '100vh' }} verticalAlign='top'>
+            <Grid style={{ height: '100vh' }} verticalAlign='top'>
                 <Grid.Column style={{ maxWidth: 455 }}>
                     <br/>
                     <Header as='h2' color='blue' textAlign='center'>
@@ -122,26 +122,19 @@ export const PhotoForm = () => {
                             autoFocus
                             defaultValue={shot?.photoTitle}
                             />
+
                         {/* <Dropdown
-                            fluid
-                            placeholder='Select a Location Folder'
-                            selection
-                            name='location'
-                            label='Locations'
-                            options={locations.name}
+                            label='Location Folders'
                             defaultValue={shot?.locationId}
-                            value={locations.id}
+                            placeholder='Location Folders'
+                            options={locations.map(location => {
+                                return `options=${location.id} value=${location.name}`
+                            })}
                             onChange={handleDropdown}
-                            >
-                            <Dropdown.Divider />
-                            <Dropdown.Header content='Add a Location Folder' />
-                                <Input name='addLocation' />
- */}
-
-
-
-
-
+                        />
+                        <Dropdown.Divider />
+                        <Dropdown.Header content='Add a Location Folder' />
+                            <Input name='addLocation' /> */}
 
 
                         <Form.Input
@@ -168,19 +161,21 @@ export const PhotoForm = () => {
                     </Form>
                     
                     <br/>
-                    <Link to={(`/`)}>
+                        {/* Cancel Add & Return to Home Screen (remove image from localStorage) */}
                         <Button 
                             variant="custom" 
                             className="cancelButton"
                             onClick={event => {
                                 localStorage.removeItem("travelImage")
+                                history.push(`/`)
                             }}>
                             Cancel
                         </Button>
-                    </Link>
                     
-                    <Link to={(`/home/detail/${shot.id}`)}>
+                        {/* If it is an existing shot, Save Updates or if it is new Save then Save Shot & 
+                        Remove from localStorage bc it will now be in the database. */}
                         <Button
+                            color='blue'
                             disabled={isLoading} 
                             variant="custom"
                             className="newShotButton"
@@ -191,7 +186,6 @@ export const PhotoForm = () => {
                             }}>
                             {shotId ? 'Save Updates' : 'Save Shot'}
                         </Button>
-                    </Link>
 
 
                 </Grid.Column>
@@ -202,3 +196,4 @@ export const PhotoForm = () => {
         </>
     )
 }
+

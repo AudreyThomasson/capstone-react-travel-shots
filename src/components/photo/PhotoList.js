@@ -1,6 +1,5 @@
 import React, { useContext, useEffect, useState } from "react"
-import { useHistory } from "react-router-dom"
-import { Card, Header, Grid } from 'semantic-ui-react'
+import { Card, Header } from 'semantic-ui-react'
 import { PhotoContext } from "./PhotoProvider"
 import { PhotoCard } from "./PhotoCard"
 // import "./Photo.css"
@@ -10,8 +9,6 @@ export const PhotoList = () => {
 
     // Since you are no longer ALWAYS displaying all of the shots
     const [ filteredShots, setFiltered ] = useState([])
-
-    const history = useHistory()
 
     // Empty dependency array - useEffect only runs after first render
     useEffect(() => {

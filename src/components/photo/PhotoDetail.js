@@ -1,102 +1,100 @@
-// import React, { useContext, useEffect, useState } from "react"
-// import { useParams, useHistory } from "react-router-dom"
-// import { PhotoContext } from "./PhotoProvider"
+import React, { useContext, useEffect, useState } from "react"
+import { useParams, useHistory } from "react-router-dom"
+import { Card, Image, Checkbox, Button } from 'semantic-ui-react'
+import { PhotoContext } from "./PhotoProvider"
 
 
-// export const PhotoDetail = () => {
-//     const { getShotById, deleteShot } = useContext(PhotoContext)
+export const PhotoDetail = () => {
+    const { getShotById, deleteShot } = useContext(PhotoContext)
+	console.log('hello photo detail')
+	const [shot, setShot] = useState()
+	// const [location, setLocation] = useState({})
 	
-// 	const [photo, setPhoto] = useState()
-// 	// const [location, setLocation] = useState({})
-// 	// const [customer, setCustomer] = useState({})
-	
-// 	const {photoId} = useParams();
-// 	const history = useHistory();
+	const {shotId} = useParams();
+	const history = useHistory();
 
-//     useEffect(() => {
-// 		console.log("useEffect", photoId)
-//         getShotById(photoId)
-//         .then((response) => {
-// 			setPhoto(response)
-// 			// setLocation(response.location)
-// 			// setCustomer(response.customer)
-// 		})
-// 			}, [])
+    useEffect(() => {
+        getShotById(shotId)
+        .then((response) => {
+            setShot(response)
+            console.log(shot)
+			// setLocation(response.location)
+		})
+			}, [])
 
-//     return (
-//         <section className="photo">
-//             <h3 className="photo__name">{photo?.name}</h3>
-//             <div className="photo__breed">{photo?.breed}</div>
-// 			<div className="photo__location">Location: {photo?.location.name}</div>
-// 			<div className="photo__owner">Customer: {photo?.customer.name}</div>
+    return (
+<>
+        <Card  color='blue' raised>
 
-//             <button onClick={
-//                 () => {
-//                     deleteShot(photo.id)
-//                         .then(() => {
-//                             history.push("/")
-//                         })
-//                 }}>Delete
-//             </button>   
+            <Image src={shot?.pictureUrl} wrapped ui ={false}/>
+            <Card.Header as='h4' >{shot?.photoTitle}</Card.Header>
+            <Card.Description href={shot?.sourceUrl}>Source: link/website</Card.Description>
+            <Card.Description>{shot?.notes}</Card.Description>
+            <br/>
+            <Card.Content extra>added by {shot?.origSaver}</Card.Content>
+            <Checkbox 
+                        disabled
+                        id={shot?.id}
+                        name='shot'
+                        label='Shot'
+                        // onChange={handleCheckbox}
+                        defaultChecked={shot?.done}
+                    />
 
-           
-//             <button onClick={() => {
-//                 history.push(`/edit/${photo?.id}`)
-//             }}>Edit</button>    
+        </Card>
+
+        <br/>
+                    {/* Cancel Button */}
+                    <Button onClick={() => {
+                        history.push(`/`)
+                    }}>Cancel</Button>   
+                    
+                    {/* Delete Button */}
+                    <Button color='red' onClick={
+                        () => {
+                            deleteShot(shot?.id)
+                                .then(() => {
+                                    history.push("/")
+                                })
+                        }}>Delete
+                    </Button>   
+
+                    {/* Edit Button */}
+                    <Button color='blue' onClick={() => {
+                        history.push(`/detail/edit/${shot?.id}`)
+                    }}>Edit</Button>    
 			
-            
-//         </section>
-//     )
-// }
-
-// export const PhotoCard = ({shot}) => (
-//     <>
-//         <Card  color='blue' raised>
-
-//             <Image as={Link} to='/home/detail/${shot.id}' src={shot.pictureUrl} wrapped ui ={false}/>
-//             <Card.Header as='h4' >{shot.photoTitle}</Card.Header>
-//             <Card.Description href={shot.sourceUrl}>Source: link/website</Card.Description>
-//             <Card.Description>{shot.notes}</Card.Description>
-//             <br/>
-//             <Checkbox 
-//                         disabled
-//                         id={shot?.id}
-//                         name='shot'
-//                         label='Shot'
-//                         // onChange={handleCheckbox}
-//                         defaultChecked={shot?.done}
-//                     />
-//         </Card>
-//     </>
-// )
+     </>       
+    )
+}
 
 
 
 
 
-// <Card.Content extra>added by {shot.origSaver}</Card.Content>
 
 
-//    {/* const [shot, setShot] = useState({})
 
-//     const handleCheckbox = (event, data) => {
-//         const newShot = { ...shot }
-//         newShot[data.name] = data.value
-//         setShot(newShot)
-//         updateShot()
-// }
+   /* const [shot, setShot] = useState({})
 
-//         {/* //PUT - update card checkbox in database */}
-//     {/* const updateShot = () => (
-//         {
-//             id: shot.id,
-//             userId: shot.userId,
-//             origSaverId: shot.origSaverId, 
-//             locationId: shot.locationId,
-//             photoTitle: shot.photoTitle,
-//             pictureUrl: shot.pictureUrl,
-//             sourceUrl: shot.sourceUrl, 
-//             notes: shot.notes, 
-//             done: shot.done
-//         }
-//     )  */}
+    const handleCheckbox = (event, data) => {
+        const newShot = { ...shot }
+        newShot[data.name] = data.value
+        setShot(newShot)
+        updateShot()
+}
+
+        {/* //PUT - update card checkbox in database */
+    /* const updateShot = () => (
+        {
+            id: shot.id,
+            userId: shot.userId,
+            origSaverId: shot.origSaverId, 
+            locationId: shot.locationId,
+            photoTitle: shot.photoTitle,
+            pictureUrl: shot.pictureUrl,
+            sourceUrl: shot.sourceUrl, 
+            notes: shot.notes, 
+            done: shot.done
+        }
+    )  */
