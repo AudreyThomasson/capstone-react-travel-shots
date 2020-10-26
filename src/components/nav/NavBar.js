@@ -1,4 +1,4 @@
-import React, { useContext, useRef, useEffect } from 'react'
+import React from 'react'
 import { Input, Menu } from 'semantic-ui-react'
 import { Link } from "react-router-dom"
 
@@ -31,9 +31,6 @@ export const NavBar = (props) => {
                     name='Add Photo'
                     as={Link} to='/add'
                 />
-
-                {/* <Menu.Item name='Add Photo' as={Link} to='/add'/> */}
-
 
                 <Menu.Item
                 name='Browse for Inspiration'
