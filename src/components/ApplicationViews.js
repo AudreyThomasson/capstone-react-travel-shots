@@ -6,6 +6,7 @@ import { LocationProvider } from "./location/LocationProvider"
 import { PhotoList } from "./photo/PhotoList"
 import { PhotoDetail } from "./photo/PhotoDetail"
 import { PhotoForm } from "./photo/PhotoForm"
+import { PhotoSearch } from "./photo/PhotoSearch"
 // import { BrowseForm } from "./photo/BrowseForm"
 // import { PhotoSearch } from "./photo/PhotoSearch"
 
@@ -15,6 +16,7 @@ export const ApplicationViews = () => {
             {/* Home / Start Screen */}
             <PhotoProvider>
                 <Route exact path="/">
+                    <PhotoSearch />
                     <PhotoList />
                 </Route>
             </PhotoProvider>

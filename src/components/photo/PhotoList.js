@@ -21,7 +21,7 @@ export const PhotoList = () => {
     useEffect(() => {
         if (searchTerms !== "") {
             // If the search field is not blank, display matching shots
-            const subset = shots.filter(shot => shot.name.toLowerCase().includes(searchTerms.toLowerCase()))
+            const subset = shots.filter(shot => shot.photoTitle.toLowerCase().includes(searchTerms.toLowerCase()))
             setFiltered(subset)
         } else {
             // If the search field is blank, display all shots
