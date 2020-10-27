@@ -1,8 +1,8 @@
 import React, { useContext, useEffect, useState } from "react"
-import { Card, Header } from 'semantic-ui-react'
+import { Card, Header, Grid } from 'semantic-ui-react'
 import { PhotoContext } from "./PhotoProvider"
 import { PhotoCard } from "./PhotoCard"
-// import "./Photo.css"
+import "./Photo.css"
 
 export const PhotoList = () => {
     const { shots, getShots, searchTerms } = useContext(PhotoContext)
@@ -33,19 +33,23 @@ export const PhotoList = () => {
 
     return (
         <>
-             <Header as='h2' color='blue' textAlign='center'>
-                    Your Shot Collection
-            </Header>
-            <br/>
-            <Card.Group itemsPerRow={5} stackable centered>
-            <>
-                {
-                filteredShots.map(shot => {
-                    return <PhotoCard key={shot.id} shot={shot} />
-                })
-                }
-            </>
-            </Card.Group>
+
+                        
+                        <Header as='h2' color='blue' textAlign='center'>
+                                Your Shot Collection
+                        </Header>
+                        <br/>
+                        <Card.Group itemsPerRow={4} stackable className='cardHolder'>
+                        <>
+                            {
+                            filteredShots.map(shot => {
+                                return <PhotoCard key={shot.id} shot={shot} />
+                            })
+                            }
+                        </>
+                        </Card.Group>
+
+
         </>
     )
 }

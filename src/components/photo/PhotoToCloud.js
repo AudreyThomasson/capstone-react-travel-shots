@@ -28,7 +28,6 @@ export const UploadImage = props => {
         console.log(file.secure_url)
         localStorage.setItem("travelImage", travelImage)
 
-       
         setImageLoading(false)
     }
  
@@ -55,7 +54,7 @@ export const UploadImage = props => {
                     
 
                     <br/>
-                    <label htmlFor="embedpollfileinput" className="ui huge blue button">
+                    <label htmlFor="embedpollfileinput" className="ui large blue button">
                         <i className="ui upload icon"></i> 
                         Upload image
                         </label>

@@ -1,14 +1,15 @@
 import React, { useState, useContext, useEffect } from 'react'
-import { Form, Grid, Header, Segment, Button, Image, Dropdown } from 'semantic-ui-react'
+import { Form, Grid, Header, Segment, Button, Image, Dropdown, Input } from 'semantic-ui-react'
 import { useHistory, useParams } from 'react-router-dom'
 import { PhotoContext } from './PhotoProvider'
 import { LocationContext } from '../location/LocationProvider'
+import "./extraButton.css"
+
 
 export const PhotoForm = () => {
     const { addShot , getShotById, updateShot } = useContext(PhotoContext)
     const { locations, getLocations, addLocation } = useContext(LocationContext)
 
-    // ({userId:+(localStorage.activeUser), origSaverId:+(localStorage.activeUser), locationId: 0, photoTitle: "", pictureUrl: localStorage.travelImage, sourceUrl: "", notes: "", done: false});
     const [shot, setShot] = useState({})
     const [location, setLocation] = useState({})
     const [isLoading, setIsLoading] = useState(true);
@@ -23,20 +24,27 @@ export const PhotoForm = () => {
         setShot(newShot)
     } 
 
-    // const handleDropdown = (event, data)=> {
-    //     const newShot = { ...shot }
-    //     if(addLocation.value.length !== 0 && location.value === "0"){
-    //         let newLocationId = locations.length
-    //         newLocationId++
-    //     }
-    //     newShot[data.name] = newLocationId
-    //     setShot(newShot)
+    const handleDropdown = (event, data)=> {
+        const newShot = { ...shot }
+        newShot[data.name] = data.value
+        setShot(newShot)
+    }
 
-    //     const LocationToSave = {
-    //         label: addLocation.value,
-    //         userId: activeUser ? +(localStorage.activeUser) : shot.userId
-    //     }
-    //     addLocation(LocationToSave)
+    const handleAddition = (event, data) => {
+        const LocationToSave = {
+            name: data.value,
+            userId: localStorage.activeUser ? +(localStorage.activeUser) : shot.userId
+        }
+        addLocation(LocationToSave).then(() => {
+            getLocations().then(locations => {
+                setLocation(locations)
+            })
+        })
+    }
+
+    // if(addLocation.value.length !== 0 && location.value === "0"){
+    //     let newLocationId = locations.length
+    //     newShot[data.name] = newLocationId++
     // }
 
     // Get location folder names. If shotId is in the URL, getShotById
@@ -65,7 +73,7 @@ export const PhotoForm = () => {
                 updateShot({
                     id: shot.id,
                     userId: shot.userId,
-                    origSaverId: shot.origSaverId, 
+                    origSaver: shot.origSaver, 
                     locationId: shot.locationId,
                     photoTitle: shot.photoTitle,
                     pictureUrl: shot.pictureUrl,
@@ -78,7 +86,7 @@ export const PhotoForm = () => {
                 //POST - add
                 addShot({
                     userId:+(localStorage.activeUser),
-                    origSaverId:+(localStorage.activeUser), 
+                    origSaver:localStorage.username, 
                     locationId: shot.locationId,
                     photoTitle: shot.photoTitle,
                     pictureUrl: localStorage.travelImage,
@@ -93,10 +101,9 @@ export const PhotoForm = () => {
     }
 
 
-
     return (
         <>
-            <Grid style={{ height: '100vh' }} verticalAlign='top'>
+            <Grid style={{ height: '100vh' }} verticalAlign='top' centered>
                 <Grid.Column style={{ maxWidth: 455 }}>
                     <br/>
                     <Header as='h2' color='blue' textAlign='center'>
@@ -123,22 +130,30 @@ export const PhotoForm = () => {
                             defaultValue={shot?.photoTitle}
                             />
 
-                        {/* <Dropdown
+                        <Form.Dropdown
+                            allowAdditions
+                            additionPosition= 'top'
+                            additionLabel= 'add a Location Folder  '
+                            onAddItem={handleAddition}
                             label='Location Folders'
-                            defaultValue={shot?.locationId}
-                            placeholder='Location Folders'
+                            placeholder={shot?.location?.name}
+                            selection
+                            search
+                            required
                             options={locations.map(location => {
-                                return `options=${location.id} value=${location.name}`
+                                return {
+                                    key: location.id,
+                                    text: location.name,
+                                    value: location.id
+                                }
                             })}
+                            defaultValue={shot?.locationId}
                             onChange={handleDropdown}
+                            name= 'locationId'
                         />
-                        <Dropdown.Divider />
-                        <Dropdown.Header content='Add a Location Folder' />
-                            <Input name='addLocation' /> */}
 
 
                         <Form.Input
-                            // fluid
                             label='Source Website/Url'
                             placeholder='Source Website/Url'
                             name='sourceUrl'
@@ -161,31 +176,33 @@ export const PhotoForm = () => {
                     </Form>
                     
                     <br/>
-                        {/* Cancel Add & Return to Home Screen (remove image from localStorage) */}
-                        <Button 
-                            variant="custom" 
-                            className="cancelButton"
-                            onClick={event => {
-                                localStorage.removeItem("travelImage")
-                                history.push(`/`)
-                            }}>
-                            Cancel
-                        </Button>
-                    
-                        {/* If it is an existing shot, Save Updates or if it is new Save then Save Shot & 
-                        Remove from localStorage bc it will now be in the database. */}
-                        <Button
-                            color='blue'
-                            disabled={isLoading} 
-                            variant="custom"
-                            className="newShotButton"
-                            onClick={event => {
-                                event.preventDefault() // Prevent browser from submitting the form
-                                constructNewShot()
-                                localStorage.removeItem("travelImage")
-                            }}>
-                            {shotId ? 'Save Updates' : 'Save Shot'}
-                        </Button>
+                        <Form.Field className= 'groupButtons'>
+                            {/* Cancel Add & Return to Home Screen (remove image from localStorage) */}
+                            <Button 
+                                variant="custom" 
+                                className="cancelButton"
+                                onClick={event => {
+                                    localStorage.removeItem("travelImage")
+                                    history.push(`/`)
+                                }}>
+                                Cancel
+                            </Button>
+                        
+                            {/* If it is an existing shot, Save Updates or if it is new Save then Save Shot & 
+                            Remove from localStorage bc it will now be in the database. */}
+                            <Button
+                                color='blue'
+                                disabled={isLoading} 
+                                variant="custom"
+                                className="newShotButton"
+                                onClick={event => {
+                                    event.preventDefault() // Prevent browser from submitting the form
+                                    constructNewShot()
+                                    localStorage.removeItem("travelImage")
+                                }}>
+                                {shotId ? 'Save Updates' : 'Save Shot'}
+                            </Button>
+                        </Form.Field>
 
 
                 </Grid.Column>

@@ -26,11 +26,12 @@
       "pictureUrl": "https://www.visitbritainshop.com/world/~/media/6955b05a4be7467b8db36a68c39fdd51.ashx?as=0&h=349&w=620",
       "sourceUrl": "https://www.visitbritainshop.com/world/tower-bridge-exhibition/",
       "notes": "shoot from this location",
-      "done": true
+      "done": false
     },
     {
       "id": 2,
       "userId": 1,
+      "origSaver": "Audrey",
       "locationId": 2,
       "photoTitle": "Tower Bridge Sign",
       "pictureUrl": "https://www.visitbritainshop.com/world/~/media/a1b4f9943a2246e0b6f37b2170b99236.ashx?as=0&h=349&w=620",
@@ -41,12 +42,46 @@
     {
       "id": 3,
       "userId": 2,
+      "origSaver": "Sarah",
       "locationId": 3,
       "photoTitle": "Mariposa Grove Trees",
       "pictureUrl": "https://www.nps.gov/yose/planyourvisit/images/mg-page.jpg?maxwidth=1200&maxheight=1200&autorotate=false",
       "sourceUrl": "https://www.nps.gov/yose/planyourvisit/mg.htm",
       "notes": "shoot the giant mariposa grove trees",
       "done": false
+    },
+    {
+      "id": 4,
+      "userId": 1,
+      "origSaver": "Audrey",
+      "locationId": 2,
+      "photoTitle": "Big Ben Distant",
+      "pictureUrl": "https://res.cloudinary.com/audreyrt/image/upload/v1603745275/travelshots/ckicro4bnfzy9jepbmrm.jpg",
+      "sourceUrl": "insta",
+      "notes": "shoot big ben from across the river",
+      "done": false
+    },
+    {
+      "userId": 1,
+      "origSaver": "Audrey",
+      "locationId": 5,
+      "photoTitle": "Jamaica Cruise Ships",
+      "pictureUrl": "https://res.cloudinary.com/audreyrt/image/upload/v1603816090/travelshots/ucso9dxgxzavfnupeity.jpg",
+      "sourceUrl": "google",
+      "notes": "overview from hotel?",
+      "done": false,
+      "id": 5
+    },
+    {
+      "userId": 1,
+      "origSaver": "Audrey",
+      "locationId": 1,
+      "photoTitle": "flag",
+      "pictureUrl": "https://res.cloudinary.com/audreyrt/image/upload/v1603825465/travelshots/dxnw9ulijkq1modlicuy.jpg",
+      "sourceUrl": "google",
+      "notes": "red white blue",
+      "done": false,
+      "id": 6
     }
   ],
   "locations": [
@@ -64,6 +99,16 @@
       "id": 3,
       "name": "Yosemite",
       "userId": 2
+    },
+    {
+      "name": "Bridges",
+      "userId": 1,
+      "id": 4
+    },
+    {
+      "name": "Beaches",
+      "userId": 1,
+      "id": 5
     }
   ]
 }
