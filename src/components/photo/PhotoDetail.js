@@ -1,7 +1,8 @@
 import React, { useContext, useEffect, useState } from "react"
 import { useParams, useHistory } from "react-router-dom"
-import { Card, Image, Checkbox, Button } from 'semantic-ui-react'
+import { Card, Image, Checkbox, Button, Grid, Header, Form, CardContent } from 'semantic-ui-react'
 import { PhotoContext } from "./PhotoProvider"
+import "./extraButton.css"
 
 
 export const PhotoDetail = () => {
@@ -23,48 +24,61 @@ export const PhotoDetail = () => {
 			}, [])
 
     return (
-<>
-        <Card  color='blue' raised>
-
-            <Image src={shot?.pictureUrl} wrapped ui ={false}/>
-            <Card.Header as='h4' >{shot?.photoTitle}</Card.Header>
-            <Card.Description href={shot?.sourceUrl}>Source: link/website</Card.Description>
-            <Card.Description>{shot?.notes}</Card.Description>
-            <br/>
-            <Card.Content extra>added by {shot?.origSaver}</Card.Content>
-            <Checkbox 
-                        disabled
-                        id={shot?.id}
-                        name='shot'
-                        label='Shot'
-                        // onChange={handleCheckbox}
-                        defaultChecked={shot?.done}
-                    />
-
-        </Card>
-
-        <br/>
-                    {/* Cancel Button */}
-                    <Button onClick={() => {
-                        history.push(`/`)
-                    }}>Cancel</Button>   
+        <>
+            <Grid style={{ height: '100vh' }} verticalAlign='top' centered>
+                <Grid.Column style={{ maxWidth: 500 }}>
+                    <br/>
+                    <Header as='h2' color='blue' textAlign='center'>{'Shot Details'}</Header>
                     
-                    {/* Delete Button */}
-                    <Button color='red' onClick={
-                        () => {
-                            deleteShot(shot?.id)
-                                .then(() => {
-                                    history.push("/")
-                                })
-                        }}>Delete
-                    </Button>   
+                    
+                    <Card  color='blue' raised centered fluid>
 
-                    {/* Edit Button */}
-                    <Button color='blue' onClick={() => {
-                        history.push(`/detail/edit/${shot?.id}`)
-                    }}>Edit</Button>    
+                        <Image src={shot?.pictureUrl} wrapped ui={false}/>
+                        <CardContent>
+                            <Card.Header as='h3' >{shot?.photoTitle}</Card.Header>
+                            <Card.Description>Collection: {shot?.location.name}</Card.Description>
+                            <Card.Description href={shot?.sourceUrl}>Source: link/website</Card.Description>
+                            <Card.Description>{shot?.notes}</Card.Description>
+                        </CardContent>
+                        <Card.Content extra>added by {shot?.origSaver}</Card.Content>
+                        <Checkbox 
+                                    disabled
+                                    id={shot?.id}
+                                    name='shot'
+                                    label='Shot'
+                                    // onChange={handleCheckbox}
+                                    defaultChecked={shot?.done}
+                                />
+
+                    </Card>
+
+                    
+                        <Form.Field className= 'groupButtons'>
+                                {/* Cancel Button */}
+                                <Button onClick={() => {
+                                    history.push(`/`)
+                                }}>Cancel</Button>   
+                                
+                                {/* Delete Button */}
+                                <Button color='red' onClick={
+                                    () => {
+                                        deleteShot(shot?.id)
+                                            .then(() => {
+                                                history.push("/")
+                                            })
+                                    }}>Delete
+                                </Button>   
+
+                                {/* Edit Button */}
+                                <Button color='blue' onClick={() => {
+                                    history.push(`/detail/edit/${shot?.id}`)
+                                }}>Edit</Button>  
+                        </Form.Field> 
+                        
+                </Grid.Column> 
+            </Grid>
 			
-     </>       
+        </>       
     )
 }
 
