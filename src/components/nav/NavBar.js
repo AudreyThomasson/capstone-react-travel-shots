@@ -32,14 +32,11 @@ export const NavBar = (props) => {
                     as={Link} to='/add'
                 />
 
-                <Menu.Item
-                name='Browse for Inspiration'
-                    as={Link} to='/browse'
-                />
                 <Menu.Menu position='right'>
-                <Menu.Item>
-                    <Input icon='search' placeholder='Search by Photo Title...' />
-                </Menu.Item>
+                    <Menu.Item
+                    name='Browse for Inspiration'
+                        as={Link} to='/browse'
+                    />
                 </Menu.Menu>
         </Menu>
                                   
