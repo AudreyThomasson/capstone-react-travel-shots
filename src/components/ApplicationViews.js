@@ -7,8 +7,8 @@ import { PhotoList } from "./photo/PhotoList"
 import { PhotoDetail } from "./photo/PhotoDetail"
 import { PhotoForm } from "./photo/PhotoForm"
 import { PhotoSearch } from "./photo/PhotoSearch"
+import { LocationList } from "./location/LocationList"
 // import { BrowseForm } from "./photo/BrowseForm"
-// import { PhotoSearch } from "./photo/PhotoSearch"
 
 export const ApplicationViews = () => {
     return (
@@ -37,11 +37,12 @@ export const ApplicationViews = () => {
                 </LocationProvider>
             </PhotoProvider>
 
-            {/* <LocationProvider>
+            {/* List of Location Collection Folders */}
+            <LocationProvider>
                 <Route exact path="/locations">
                     <LocationList />
                 </Route>
-            </LocationProvider> */}
+            </LocationProvider>
 
             {/* Adding own shot to collection- Part 1 */}
             <Route exact path="/add">

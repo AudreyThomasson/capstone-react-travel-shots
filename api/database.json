@@ -64,28 +64,6 @@
     {
       "userId": 1,
       "origSaver": "Audrey",
-      "locationId": 5,
-      "photoTitle": "Jamaica Cruise Ships",
-      "pictureUrl": "https://res.cloudinary.com/audreyrt/image/upload/v1603816090/travelshots/ucso9dxgxzavfnupeity.jpg",
-      "sourceUrl": "google",
-      "notes": "overview from hotel?",
-      "done": false,
-      "id": 5
-    },
-    {
-      "id": 6,
-      "userId": 1,
-      "origSaver": "Audrey",
-      "locationId": 11,
-      "photoTitle": "flag",
-      "pictureUrl": "https://res.cloudinary.com/audreyrt/image/upload/v1603825465/travelshots/dxnw9ulijkq1modlicuy.jpg",
-      "sourceUrl": "google",
-      "notes": "red white blue",
-      "done": false
-    },
-    {
-      "userId": 1,
-      "origSaver": "Audrey",
       "locationId": 2,
       "photoTitle": "Diana",
       "pictureUrl": "https://res.cloudinary.com/audreyrt/image/upload/v1603895541/travelshots/riq4dllpuejcvc8c0o8u.jpg",
@@ -93,28 +71,6 @@
       "notes": "outfit inspiration for shoot",
       "done": false,
       "id": 7
-    },
-    {
-      "userId": 1,
-      "origSaver": "Audrey",
-      "locationId": 7,
-      "photoTitle": "Kissing Dolphin",
-      "pictureUrl": "https://res.cloudinary.com/audreyrt/image/upload/v1603895617/travelshots/snclc1c3ph9sygh2lykn.jpg",
-      "sourceUrl": "google",
-      "notes": "dolphins are so cool",
-      "done": false,
-      "id": 8
-    },
-    {
-      "userId": 1,
-      "origSaver": "Audrey",
-      "locationId": 11,
-      "photoTitle": "UK Flag",
-      "pictureUrl": "https://res.cloudinary.com/audreyrt/image/upload/v1603896821/travelshots/w4pzplqew3zdxr1ac7ot.jpg",
-      "sourceUrl": "uk website",
-      "notes": "I love flags",
-      "done": false,
-      "id": 9
     }
   ],
   "locations": [
@@ -139,16 +95,6 @@
       "id": 4
     },
     {
-      "name": "Beaches",
-      "userId": 1,
-      "id": 5
-    },
-    {
-      "name": "Jamaica",
-      "userId": 1,
-      "id": 7
-    },
-    {
       "name": "Edinburgh",
       "userId": 1,
       "id": 8
@@ -157,21 +103,6 @@
       "name": "Flags",
       "userId": 1,
       "id": 9
-    },
-    {
-      "name": "blue and white",
-      "userId": 1,
-      "id": 10
-    },
-    {
-      "name": "Fun with Flags",
-      "userId": 1,
-      "id": 11
-    },
-    {
-      "name": "Museums",
-      "userId": 1,
-      "id": 12
     }
   ]
 }

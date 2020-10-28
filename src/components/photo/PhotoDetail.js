@@ -36,20 +36,22 @@ export const PhotoDetail = () => {
                         <Image src={shot?.pictureUrl} wrapped ui={false}/>
                         <CardContent>
                             <Card.Header as='h3' >{shot?.photoTitle}</Card.Header>
-                            <Card.Description>Collection: {shot?.location.name}</Card.Description>
+                            <Card.Description>Collection:  {shot?.location.name}</Card.Description>
                             <Card.Description href={shot?.sourceUrl}>Source: link/website</Card.Description>
-                            <Card.Description>{shot?.notes}</Card.Description>
+                            <Card.Description>Notes:  {shot?.notes}</Card.Description>
                         </CardContent>
-                        <Card.Content extra>added by {shot?.origSaver}</Card.Content>
-                        <Checkbox 
-                                    disabled
-                                    id={shot?.id}
-                                    name='shot'
-                                    label='Shot'
-                                    // onChange={handleCheckbox}
-                                    defaultChecked={shot?.done}
-                                />
-
+                        <Card.Content extra className='extraBox'>
+                            added by: {shot?.origSaver}
+                            <segment/>
+                            <Checkbox 
+                                        disabled
+                                        id={shot?.id}
+                                        name='shot'
+                                        label='Shot'
+                                        // onChange={handleCheckbox}
+                                        defaultChecked={shot?.done}
+                                    />
+                        </Card.Content>
                     </Card>
 
                     

@@ -10,7 +10,6 @@ const menuStyle = {
     marginLeft: '6em',
     marginRight: '4em',
     marginTop: '3em',
-    // transition: 'box-shadow 0.5s ease, padding 0.5s ease',
   }
 
   
@@ -25,6 +24,11 @@ export const NavBar = (props) => {
                 <Menu.Item 
                     name='Home'
                     as={Link} to='/'
+                />
+
+                <Menu.Item 
+                    name='View by Collection'
+                    as={Link} to='/locations'
                 />
 
                 <Menu.Item

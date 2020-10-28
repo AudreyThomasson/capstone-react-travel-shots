@@ -25,7 +25,7 @@ export const PhotoList = () => {
             const subset = shots.filter(shot => shot.photoTitle.toLowerCase().includes(searchTerms.toLowerCase()) && shot.userId === +(localStorage.activeUser))
             setFiltered(subset)
         } else {
-            // If the search field is blank, display all shots
+            // If the search field is blank, display all shots matching the activeUser
             const userShots = shots.filter(shot => shot.userId === +(localStorage.activeUser))
             setFiltered(userShots)
         }
