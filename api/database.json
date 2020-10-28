@@ -64,24 +64,13 @@
     {
       "userId": 1,
       "origSaver": "Audrey",
-      "locationId": 5,
-      "photoTitle": "Jamaica Cruise Ships",
-      "pictureUrl": "https://res.cloudinary.com/audreyrt/image/upload/v1603816090/travelshots/ucso9dxgxzavfnupeity.jpg",
+      "locationId": 2,
+      "photoTitle": "Diana",
+      "pictureUrl": "https://res.cloudinary.com/audreyrt/image/upload/v1603895541/travelshots/riq4dllpuejcvc8c0o8u.jpg",
       "sourceUrl": "google",
-      "notes": "overview from hotel?",
+      "notes": "outfit inspiration for shoot",
       "done": false,
-      "id": 5
-    },
-    {
-      "userId": 1,
-      "origSaver": "Audrey",
-      "locationId": 1,
-      "photoTitle": "flag",
-      "pictureUrl": "https://res.cloudinary.com/audreyrt/image/upload/v1603825465/travelshots/dxnw9ulijkq1modlicuy.jpg",
-      "sourceUrl": "google",
-      "notes": "red white blue",
-      "done": false,
-      "id": 6
+      "id": 7
     }
   ],
   "locations": [
@@ -106,9 +95,14 @@
       "id": 4
     },
     {
-      "name": "Beaches",
+      "name": "Edinburgh",
       "userId": 1,
-      "id": 5
+      "id": 8
+    },
+    {
+      "name": "Flags",
+      "userId": 1,
+      "id": 9
     }
   ]
 }

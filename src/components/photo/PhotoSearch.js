@@ -12,6 +12,7 @@ export const PhotoSearch = () => {
 
     return (
         <>
+            <div className='searchBox'>
             <Input
                 icon='search'
                 type="text"
@@ -20,6 +21,7 @@ export const PhotoSearch = () => {
                     (keyEvent) => setSearchTerms(keyEvent.target.value)
                 }
                 placeholder="Search by Photo Title... " />
+            </div> 
         </>
     )
 }
