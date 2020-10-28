@@ -18,6 +18,12 @@ export const LocationProvider = (props) => {
             .then(setLocations)
     }
 
+    const getLocationsByUser = (userId) => {
+        return fetch(`http://localhost:8088/locations?userId=${userId}`)
+            .then(res => res.json())
+            .then(setLocations)
+    }
+
     const addLocation = locationObj => {
         return fetch("http://localhost:8088/locations", {
             method: "POST",
@@ -51,7 +57,7 @@ export const LocationProvider = (props) => {
     */
     return (
         <LocationContext.Provider value={{
-            locations, getLocations, addLocation, getLocationById, updateLocation
+            locations, getLocations, getLocationsByUser, addLocation, getLocationById, updateLocation
         }}>
             {props.children}
         </LocationContext.Provider>

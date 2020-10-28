@@ -1,5 +1,5 @@
 import React, { useState, useContext, useEffect } from 'react'
-import { Form, Grid, Header, Segment, Button, Image, Dropdown, Input } from 'semantic-ui-react'
+import { Form, Grid, Header, Segment, Button, Image } from 'semantic-ui-react'
 import { useHistory, useParams } from 'react-router-dom'
 import { PhotoContext } from './PhotoProvider'
 import { LocationContext } from '../location/LocationProvider'
@@ -8,7 +8,7 @@ import "./extraButton.css"
 
 export const PhotoForm = () => {
     const { addShot , getShotById, updateShot } = useContext(PhotoContext)
-    const { locations, getLocations, addLocation } = useContext(LocationContext)
+    const { locations, getLocationsByUser, addLocation } = useContext(LocationContext)
 
     const [shot, setShot] = useState({})
     const [location, setLocation] = useState({})
@@ -33,23 +33,19 @@ export const PhotoForm = () => {
     const handleAddition = (event, data) => {
         const LocationToSave = {
             name: data.value,
-            userId: localStorage.activeUser ? +(localStorage.activeUser) : shot.userId
+            userId: +(localStorage.activeUser)
         }
         addLocation(LocationToSave).then(() => {
-            getLocations().then(locations => {
+            getLocationsByUser(+(localStorage.activeUser)).then(locations => {
                 setLocation(locations)
             })
         })
     }
 
-    // if(addLocation.value.length !== 0 && location.value === "0"){
-    //     let newLocationId = locations.length
-    //     newShot[data.name] = newLocationId++
-    // }
 
-    // Get location folder names. If shotId is in the URL, getShotById
+    // Get location folder names. If shotId is in the URL, getShotById for an edit
     useEffect(() => {
-        getLocations().then(()=> {
+        getLocationsByUser(+(localStorage.activeUser)).then(()=> {
             if (shotId){
                 getShotById(shotId)
                 .then(shot => {
@@ -131,9 +127,10 @@ export const PhotoForm = () => {
                             />
 
                         <Form.Dropdown
+                            closeOnChange
                             allowAdditions
                             additionPosition= 'top'
-                            additionLabel= 'add a Location Folder  '
+                            additionLabel= 'add a Location Folder:   '
                             onAddItem={handleAddition}
                             label='Location Folders'
                             placeholder={shot?.location?.name}
