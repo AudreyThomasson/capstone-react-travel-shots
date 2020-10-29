@@ -47,26 +47,24 @@ export const FolderPhotoList = () => {
     return (
         <>
                 
-                    <Header as='h2' color='blue' textAlign='center'>
-                        Your Collection
-                        <Dropdown
-                                icon='ellipsis horizontal'
-                                className='icon'
-                            >
-                                <Dropdown.Menu>
-                                <Dropdown.Item
-                                    onClick={() => history.push(`/locations/edit/${locationId}`)}>
-                                    Edit Collection Name
-                                </Dropdown.Item>
-                                <Dropdown.Item
-                                    onClick={() => setOpen(true)}>
-                                    Delete Collection
-                                </Dropdown.Item>
-                                </Dropdown.Menu>
-                            </Dropdown>
-                    </Header>
-                })
-            }
+            <Header as='h2' color='blue' textAlign='center'>
+                Your Collection
+                <Dropdown
+                        icon='ellipsis horizontal'
+                        className='icon'
+                    >
+                        <Dropdown.Menu>
+                        <Dropdown.Item
+                            onClick={() => history.push(`/locations/edit/${locationId}`)}>
+                            Edit Collection Name
+                        </Dropdown.Item>
+                        <Dropdown.Item
+                            onClick={() => setOpen(true)}>
+                            Delete Collection
+                        </Dropdown.Item>
+                        </Dropdown.Menu>
+                    </Dropdown>
+            </Header>
             <br/>
             <Card.Group itemsPerRow={4} stackable className='cardHolder'>
             <>

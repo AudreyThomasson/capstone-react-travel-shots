@@ -42,7 +42,7 @@ export const PhotoDetail = () => {
                         </CardContent>
                         <Card.Content extra className='extraBox'>
                             added by: {shot?.origSaver}
-                            <segment/>
+                            {/* <segment/> */}
                             {/* <Checkbox 
                                         disabled
                                         id={shot?.id}
@@ -58,7 +58,7 @@ export const PhotoDetail = () => {
                         <Form.Field className= 'groupButtons'>
                                 {/* Cancel Button */}
                                 <Button onClick={() => {
-                                    history.push(`/`)
+                                    history.push(`/home`)
                                 }}>Cancel</Button>   
                                 
                                 {/* Delete Button */}
@@ -66,7 +66,7 @@ export const PhotoDetail = () => {
                                     () => {
                                         deleteShot(shot?.id)
                                             .then(() => {
-                                                history.push("/")
+                                                history.push('/home')
                                             })
                                     }}>Delete
                                 </Button>   

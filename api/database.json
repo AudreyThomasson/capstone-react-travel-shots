@@ -95,17 +95,6 @@
       "id": 9
     },
     {
-      "id": 11,
-      "userId": 1,
-      "origSaver": "Audrey",
-      "locationId": 9,
-      "photoTitle": "UK Flag",
-      "pictureUrl": "https://res.cloudinary.com/audreyrt/image/upload/v1603988657/travelshots/djpxirx6utcsbf8xkvkx.jpg",
-      "sourceUrl": "insta",
-      "notes": "Shoot flag waving in wind",
-      "done": false
-    },
-    {
       "userId": 2,
       "origSaver": "Sarah",
       "locationId": 10,
@@ -135,9 +124,9 @@
       "id": 1
     },
     {
-      "name": "London Trip",
+      "id": 2,
       "userId": 1,
-      "id": 2
+      "name": "London Girls Trip"
     },
     {
       "name": "Yosemite",
@@ -163,6 +152,11 @@
       "name": "Animals",
       "userId": 2,
       "id": 10
+    },
+    {
+      "name": "Red Flags",
+      "userId": 1,
+      "id": 11
     }
   ]
 }
