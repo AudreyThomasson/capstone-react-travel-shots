@@ -71,6 +71,39 @@
       "notes": "outfit inspiration for shoot",
       "done": false,
       "id": 7
+    },
+    {
+      "userId": 1,
+      "origSaver": "Audrey",
+      "locationId": 1,
+      "photoTitle": "France Flag",
+      "pictureUrl": "https://res.cloudinary.com/audreyrt/image/upload/v1603988482/travelshots/bomkrbe6tssot3fo7el2.jpg",
+      "sourceUrl": "insta",
+      "notes": "blue, white, red inspiration",
+      "done": false,
+      "id": 8
+    },
+    {
+      "userId": 1,
+      "origSaver": "Audrey",
+      "locationId": 1,
+      "photoTitle": "Louvre Plaza",
+      "pictureUrl": "https://res.cloudinary.com/audreyrt/image/upload/v1603988540/travelshots/bfq9vpn01gwte7oyrnbh.jpg",
+      "sourceUrl": "google",
+      "notes": "shoot wide angle of plaza and pyramid",
+      "done": false,
+      "id": 9
+    },
+    {
+      "id": 11,
+      "userId": 1,
+      "origSaver": "Audrey",
+      "locationId": 9,
+      "photoTitle": "UK Flag",
+      "pictureUrl": "https://res.cloudinary.com/audreyrt/image/upload/v1603988657/travelshots/djpxirx6utcsbf8xkvkx.jpg",
+      "sourceUrl": "insta",
+      "notes": "Shoot flag waving in wind",
+      "done": false
     }
   ],
   "locations": [
@@ -100,14 +133,9 @@
       "id": 8
     },
     {
-      "name": "Flags",
+      "id": 9,
       "userId": 1,
-      "id": 9
-    },
-    {
-      "userId": 1,
-      "name": "Beaches",
-      "id": 10
+      "name": "Fun with Flags"
     }
   ]
 }

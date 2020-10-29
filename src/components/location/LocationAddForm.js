@@ -1,11 +1,11 @@
 import React, { useState, useContext } from 'react'
 import { Form, Grid, Header, Segment, Button } from 'semantic-ui-react'
 import { useHistory } from 'react-router-dom'
-import { LocationContext } from '../location/LocationProvider'
+import { LocationContext } from './LocationProvider'
 import "../photo/extraButton.css"
 
 
-export const LocationForm = () => {
+export const LocationAddForm = () => {
     const { addLocation } = useContext(LocationContext)
 
     const [location, setLocation] = useState({})

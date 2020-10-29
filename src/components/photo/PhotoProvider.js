@@ -19,6 +19,12 @@ export const PhotoProvider = (props) => {
             .then(setShots)
     }
 
+    const getShotsByUserFolder = (userId, locationId) => {
+        return fetch(`http://localhost:8088/shots?userId=${userId}&locationId=${locationId}&_expand=location`)
+            .then(res => res.json())
+            .then(setShots)
+    }
+
     const addShot = photoObj => {
         return fetch("http://localhost:8088/shots", {
             method: "POST",
@@ -57,7 +63,7 @@ export const PhotoProvider = (props) => {
     */
     return (
         <PhotoContext.Provider value={{
-            shots, getShots, addShot, getShotById, deleteShot, updateShot, searchTerms, setSearchTerms
+            shots, getShots, getShotsByUserFolder, addShot, getShotById, deleteShot, updateShot, searchTerms, setSearchTerms
         }}>
             {props.children}
         </PhotoContext.Provider>

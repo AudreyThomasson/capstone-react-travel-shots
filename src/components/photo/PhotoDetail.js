@@ -43,14 +43,14 @@ export const PhotoDetail = () => {
                         <Card.Content extra className='extraBox'>
                             added by: {shot?.origSaver}
                             <segment/>
-                            <Checkbox 
+                            {/* <Checkbox 
                                         disabled
                                         id={shot?.id}
                                         name='shot'
                                         label='Shot'
                                         // onChange={handleCheckbox}
                                         defaultChecked={shot?.done}
-                                    />
+                                    /> */}
                         </Card.Content>
                     </Card>
 
