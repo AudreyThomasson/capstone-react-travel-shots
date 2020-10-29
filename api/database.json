@@ -104,6 +104,28 @@
       "sourceUrl": "insta",
       "notes": "Shoot flag waving in wind",
       "done": false
+    },
+    {
+      "userId": 2,
+      "origSaver": "Sarah",
+      "locationId": 10,
+      "photoTitle": "Dolphins",
+      "pictureUrl": "https://res.cloudinary.com/audreyrt/image/upload/v1604001780/travelshots/wd2d67y0vkflp3q3nbnv.jpg",
+      "sourceUrl": "insta",
+      "notes": "close up dolphin shot",
+      "done": false,
+      "id": 12
+    },
+    {
+      "userId": 2,
+      "origSaver": "Sarah",
+      "locationId": 10,
+      "photoTitle": "underwater dolphin kiss",
+      "pictureUrl": "https://res.cloudinary.com/audreyrt/image/upload/v1604002110/travelshots/xuuuwdcpurujk67jrb8q.jpg",
+      "sourceUrl": "google",
+      "notes": "bring underwater housing",
+      "done": false,
+      "id": 13
     }
   ],
   "locations": [
@@ -136,6 +158,11 @@
       "id": 9,
       "userId": 1,
       "name": "Fun with Flags"
+    },
+    {
+      "name": "Animals",
+      "userId": 2,
+      "id": 10
     }
   ]
 }

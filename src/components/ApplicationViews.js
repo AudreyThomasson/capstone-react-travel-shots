@@ -18,7 +18,7 @@ export const ApplicationViews = () => {
         <>
             {/* Home / Start Screen with All Shots of user & Search field */}
             <PhotoProvider>
-                <Route exact path="/">
+                <Route exact path="/home">
                     <PhotoSearch />
                     <PhotoList />
                 </Route>

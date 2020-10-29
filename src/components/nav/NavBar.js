@@ -23,7 +23,7 @@ export const NavBar = (props) => {
         >
                 <Menu.Item 
                     name='Home'
-                    as={Link} to='/'
+                    as={Link} to='/home'
                 />
 
                 <Menu.Item 
