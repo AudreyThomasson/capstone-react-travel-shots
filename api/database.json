@@ -75,19 +75,19 @@
   ],
   "locations": [
     {
-      "id": 1,
       "name": "Paris Visit",
-      "userId": 1
+      "userId": 1,
+      "id": 1
     },
     {
-      "id": 2,
       "name": "London Trip",
-      "userId": 1
+      "userId": 1,
+      "id": 2
     },
     {
-      "id": 3,
       "name": "Yosemite",
-      "userId": 2
+      "userId": 2,
+      "id": 3
     },
     {
       "name": "Bridges",
@@ -103,6 +103,11 @@
       "name": "Flags",
       "userId": 1,
       "id": 9
+    },
+    {
+      "userId": 1,
+      "name": "Beaches",
+      "id": 10
     }
   ]
 }

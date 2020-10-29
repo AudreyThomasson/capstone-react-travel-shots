@@ -8,12 +8,13 @@ import { PhotoDetail } from "./photo/PhotoDetail"
 import { PhotoForm } from "./photo/PhotoForm"
 import { PhotoSearch } from "./photo/PhotoSearch"
 import { LocationList } from "./location/LocationList"
+import { LocationForm } from "./location/LocationForm"
 // import { BrowseForm } from "./photo/BrowseForm"
 
 export const ApplicationViews = () => {
     return (
         <>
-            {/* Home / Start Screen */}
+            {/* Home / Start Screen with All Shots & Search field */}
             <PhotoProvider>
                 <Route exact path="/">
                     <PhotoSearch />
@@ -41,6 +42,13 @@ export const ApplicationViews = () => {
             <LocationProvider>
                 <Route exact path="/locations">
                     <LocationList />
+                </Route>
+            </LocationProvider>
+
+            {/* Adding a Location Folder */}
+            <LocationProvider>
+                <Route exact path="/locations/add">
+                    <LocationForm />
                 </Route>
             </LocationProvider>
 
