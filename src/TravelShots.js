@@ -12,7 +12,7 @@ export const TravelShots = () => (
             if (localStorage.getItem("activeUser")) {
                 return (
                     <>
-                        <HeaderWelcome />
+                        {/* <HeaderWelcome /> */}
                         <NavBar />
                         <ApplicationViews />
                     </>
