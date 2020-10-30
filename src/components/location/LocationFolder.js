@@ -7,14 +7,25 @@ import { useHistory } from 'react-router-dom'
 
 
 export const LocationFolder = ({location}) => {
-    const [open, setOpen] = useState(false)
-    const history = useHistory();
-    const { deleteLocation } = useContext(LocationContext)
+
 
     return (
-    <>
-        <Card  href={`/locations/${location.id}`} raised>
-            {/* <Card.Content
+        <>
+            <Card  href={`/locations/${location.id}`} raised>
+                <Image src={BlueFolder} wrapped ui ={false}/>
+                
+                <Card.Content>
+                    <Card.Header color='blue' textAlign='center' as='h3' >{location.name}</Card.Header>
+                </Card.Content>        
+                
+            </Card>
+        </>
+    )
+}
+
+
+           {/* Card with Background Folder and Writing on top 
+            <Card.Content
                 style={{
                     height: "200px",
                     backgroundImage: BlueFolder,
@@ -27,15 +38,3 @@ export const LocationFolder = ({location}) => {
             </Card.Description>
             </Card.Content>
          */}
-
-        <Image src={BlueFolder} wrapped ui ={false}/>
-        
-        <Card.Content>
-            <Card.Header color='blue' textAlign='center' as='h3' >{location.name}</Card.Header>
-        </Card.Content>        
-            
-
-        </Card>
-    </>
-    )
-}

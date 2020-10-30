@@ -71,23 +71,67 @@
       "notes": "outfit inspiration for shoot",
       "done": false,
       "id": 7
+    },
+    {
+      "userId": 1,
+      "origSaver": "Audrey",
+      "locationId": 1,
+      "photoTitle": "France Flag",
+      "pictureUrl": "https://res.cloudinary.com/audreyrt/image/upload/v1603988482/travelshots/bomkrbe6tssot3fo7el2.jpg",
+      "sourceUrl": "insta",
+      "notes": "blue, white, red inspiration",
+      "done": false,
+      "id": 8
+    },
+    {
+      "userId": 1,
+      "origSaver": "Audrey",
+      "locationId": 1,
+      "photoTitle": "Louvre Plaza",
+      "pictureUrl": "https://res.cloudinary.com/audreyrt/image/upload/v1603988540/travelshots/bfq9vpn01gwte7oyrnbh.jpg",
+      "sourceUrl": "google",
+      "notes": "shoot wide angle of plaza and pyramid",
+      "done": false,
+      "id": 9
+    },
+    {
+      "userId": 2,
+      "origSaver": "Sarah",
+      "locationId": 10,
+      "photoTitle": "Dolphins",
+      "pictureUrl": "https://res.cloudinary.com/audreyrt/image/upload/v1604001780/travelshots/wd2d67y0vkflp3q3nbnv.jpg",
+      "sourceUrl": "insta",
+      "notes": "close up dolphin shot",
+      "done": false,
+      "id": 12
+    },
+    {
+      "userId": 2,
+      "origSaver": "Sarah",
+      "locationId": 10,
+      "photoTitle": "underwater dolphin kiss",
+      "pictureUrl": "https://res.cloudinary.com/audreyrt/image/upload/v1604002110/travelshots/xuuuwdcpurujk67jrb8q.jpg",
+      "sourceUrl": "google",
+      "notes": "bring underwater housing",
+      "done": false,
+      "id": 13
     }
   ],
   "locations": [
     {
-      "id": 1,
       "name": "Paris Visit",
-      "userId": 1
+      "userId": 1,
+      "id": 1
     },
     {
       "id": 2,
-      "name": "London Trip",
-      "userId": 1
+      "userId": 1,
+      "name": "London Girls Trip"
     },
     {
-      "id": 3,
       "name": "Yosemite",
-      "userId": 2
+      "userId": 2,
+      "id": 3
     },
     {
       "name": "Bridges",
@@ -100,9 +144,19 @@
       "id": 8
     },
     {
-      "name": "Flags",
+      "id": 9,
       "userId": 1,
-      "id": 9
+      "name": "Fun with Flags"
+    },
+    {
+      "name": "Animals",
+      "userId": 2,
+      "id": 10
+    },
+    {
+      "name": "Red Flags",
+      "userId": 1,
+      "id": 11
     }
   ]
 }

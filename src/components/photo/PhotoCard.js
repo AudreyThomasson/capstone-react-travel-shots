@@ -14,13 +14,13 @@ export const PhotoCard = ({shot}) => (
             <Card.Description href={shot.sourceUrl}>Source: link/website</Card.Description>
             <Card.Description>{shot.notes}</Card.Description>
             <br/>
-            <Checkbox 
+            {/* <Checkbox 
                         disabled
                         id={shot?.id}
                         name='shot'
                         label='Shot'
                         defaultChecked={shot?.done}
-                    />
+                    /> */}
             </CardContent>
         </Card>
     </>

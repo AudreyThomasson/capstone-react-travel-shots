@@ -90,7 +90,7 @@ export const PhotoForm = () => {
                     notes: shot.notes, 
                     done: false
                 })
-                .then(() => history.push(`/`))
+                .then(() => history.push(`/home`))
             }
         }
         
@@ -116,7 +116,6 @@ export const PhotoForm = () => {
                         </div>                   
                         <br/>
                         <Form.Input
-                            // fluid
                             label='Photo Title:'
                             placeholder='Photo Title'
                             name='photoTitle'
@@ -180,7 +179,7 @@ export const PhotoForm = () => {
                                 className="cancelButton"
                                 onClick={event => {
                                     localStorage.removeItem("travelImage")
-                                    history.push(`/`)
+                                    history.push(`/home`)
                                 }}>
                                 Cancel
                             </Button>

@@ -8,14 +8,17 @@ import { PhotoDetail } from "./photo/PhotoDetail"
 import { PhotoForm } from "./photo/PhotoForm"
 import { PhotoSearch } from "./photo/PhotoSearch"
 import { LocationList } from "./location/LocationList"
+import { LocationAddForm } from "./location/LocationAddForm"
+import { FolderPhotoList } from "./location/LocationShotsByFolder"
+import { LocationEditForm } from "./location/LocationEditForm"
 // import { BrowseForm } from "./photo/BrowseForm"
 
 export const ApplicationViews = () => {
     return (
         <>
-            {/* Home / Start Screen */}
+            {/* Home / Start Screen with All Shots of user & Search field */}
             <PhotoProvider>
-                <Route exact path="/">
+                <Route exact path="/home">
                     <PhotoSearch />
                     <PhotoList />
                 </Route>
@@ -44,12 +47,36 @@ export const ApplicationViews = () => {
                 </Route>
             </LocationProvider>
 
-            {/* Adding own shot to collection- Part 1 */}
+            {/* Adding a Location Folder */}
+            <LocationProvider>
+                <Route exact path="/locations/add">
+                    <LocationAddForm />
+                </Route>
+            </LocationProvider>
+
+            {/* Photos in a single Collection Folder with Search */}
+            <PhotoProvider>
+                <LocationProvider>
+                    <Route exact path="/locations/:locationId(\d+)">
+                        <PhotoSearch />
+                        <FolderPhotoList />
+                    </Route>
+                </LocationProvider>
+            </PhotoProvider>
+
+             {/* Editing Name of a Location Folder */}
+             <LocationProvider>
+                <Route exact path="/locations/edit/:locationId(\d+)">
+                    <LocationEditForm />
+                </Route>
+            </LocationProvider>
+
+            {/* Adding own shot- Part 1 of 2 */}
             <Route exact path="/add">
                 <UploadImage />
             </Route>
 
-             {/* Adding own shot to collection- Part 2 */}
+             {/* Adding own shot- Part 2 of 2*/}
             <PhotoProvider>
                 <LocationProvider>
                     <Route exact path="/add/NewFinish"> 

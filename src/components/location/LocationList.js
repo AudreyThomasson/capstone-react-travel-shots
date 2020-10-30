@@ -33,29 +33,28 @@ export const LocationList = () => {
 
 
     return (
-        <>
+        <>            
+            <Header as='h2' color='blue' textAlign='center'>
+                    Your Collection Folders
+            </Header>
+            <br/>
+            <Card.Group itemsPerRow={4} stackable className='cardHolder'>
+            
+            <Card href={`/locations/add`} raised>
+                <Image src={BlueFolder} wrapped ui ={false}/>
+                <Card.Content>
+                    <Card.Header color='blue' textAlign='center' as='h3' >Add a Folder</Card.Header>
+                </Card.Content>        
+            </Card>
 
-                        
-                        <Header as='h2' color='blue' textAlign='center'>
-                                Your Collection Folders
-                        </Header>
-                        <br/>
-                        <Card.Group itemsPerRow={4} stackable className='cardHolder'>
-                        
-                        <Card href={`/locations/add`} raised>
-                            <Image src={BlueFolder} wrapped ui ={false}/>
-                            <Card.Content>
-                                <Card.Header color='blue' textAlign='center' as='h3' >Add a Folder</Card.Header>
-                            </Card.Content>        
-                        </Card>
-                        <>
-                            {
-                            locations.map(location => {
-                                return <LocationFolder key={location.id} location={location} />
-                            })
-                            }
-                        </>
-                        </Card.Group>
+            <>
+                {
+                locations.map(location => {
+                    return <LocationFolder key={location.id} location={location} />
+                })
+                }
+            </>
+            </Card.Group>
 
 
         </>
