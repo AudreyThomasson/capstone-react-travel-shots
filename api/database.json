@@ -64,28 +64,6 @@
     {
       "userId": 1,
       "origSaver": "Audrey",
-      "locationId": 2,
-      "photoTitle": "Diana",
-      "pictureUrl": "https://res.cloudinary.com/audreyrt/image/upload/v1603895541/travelshots/riq4dllpuejcvc8c0o8u.jpg",
-      "sourceUrl": "google",
-      "notes": "outfit inspiration for shoot",
-      "done": false,
-      "id": 7
-    },
-    {
-      "userId": 1,
-      "origSaver": "Audrey",
-      "locationId": 1,
-      "photoTitle": "France Flag",
-      "pictureUrl": "https://res.cloudinary.com/audreyrt/image/upload/v1603988482/travelshots/bomkrbe6tssot3fo7el2.jpg",
-      "sourceUrl": "insta",
-      "notes": "blue, white, red inspiration",
-      "done": false,
-      "id": 8
-    },
-    {
-      "userId": 1,
-      "origSaver": "Audrey",
       "locationId": 1,
       "photoTitle": "Louvre Plaza",
       "pictureUrl": "https://res.cloudinary.com/audreyrt/image/upload/v1603988540/travelshots/bfq9vpn01gwte7oyrnbh.jpg",
@@ -115,13 +93,79 @@
       "notes": "bring underwater housing",
       "done": false,
       "id": 13
+    },
+    {
+      "userId": 1,
+      "origSaver": "Audrey",
+      "locationId": 2,
+      "photoTitle": "Tower Bridge",
+      "pictureUrl": "https://res.cloudinary.com/audreyrt/image/upload/v1604066814/travelshots/wgsbfrewipexylobyjn7.jpg",
+      "sourceUrl": "getty",
+      "notes": "shoot from grassy area on this side",
+      "done": false,
+      "id": 14
+    },
+    {
+      "userId": 1,
+      "origSaver": "Audrey",
+      "locationId": 1,
+      "photoTitle": "Eiffel Tower",
+      "pictureUrl": "https://res.cloudinary.com/audreyrt/image/upload/v1604067009/travelshots/h4fh1uq6xaxe7irlq71i.jpg",
+      "sourceUrl": "insta",
+      "notes": "far off shot of whole tower",
+      "done": false,
+      "id": 15
+    },
+    {
+      "id": 16,
+      "userId": 1,
+      "origSaver": "Audrey",
+      "locationId": 9,
+      "photoTitle": "Big Ben Bridge Flag",
+      "pictureUrl": "https://res.cloudinary.com/audreyrt/image/upload/v1604067077/travelshots/mndymy2vbags9exqgpjx.jpg",
+      "sourceUrl": "insta",
+      "notes": "shoot from bridge",
+      "done": false
+    },
+    {
+      "userId": 1,
+      "origSaver": "Audrey",
+      "locationId": 1,
+      "photoTitle": "France Flag Eiffel Bridge",
+      "pictureUrl": "https://res.cloudinary.com/audreyrt/image/upload/v1604067862/travelshots/fixw6fun7yw3nu8sq3am.jpg",
+      "sourceUrl": "insta",
+      "notes": "figure out which bridge this is and bring a flag.",
+      "done": false,
+      "id": 17
+    },
+    {
+      "id": 18,
+      "userId": 1,
+      "origSaver": "Audrey",
+      "locationId": 1,
+      "photoTitle": "Arc de Triomphe",
+      "pictureUrl": "https://res.cloudinary.com/audreyrt/image/upload/v1604068077/travelshots/fgayaefb8vgywipcnul6.jpg",
+      "sourceUrl": "insta",
+      "notes": "Arc de Triomphe",
+      "done": false
+    },
+    {
+      "userId": 1,
+      "origSaver": "Audrey",
+      "locationId": 12,
+      "photoTitle": "Irie Hole",
+      "pictureUrl": "https://res.cloudinary.com/audreyrt/image/upload/v1604074735/travelshots/uviitesls3zzumauxs1u.jpg",
+      "sourceUrl": "instagram",
+      "notes": "plan visit to blue hole",
+      "done": false,
+      "id": 19
     }
   ],
   "locations": [
     {
-      "name": "Paris Visit",
+      "id": 1,
       "userId": 1,
-      "id": 1
+      "name": "Paris Visit in March"
     },
     {
       "id": 2,
@@ -132,16 +176,6 @@
       "name": "Yosemite",
       "userId": 2,
       "id": 3
-    },
-    {
-      "name": "Bridges",
-      "userId": 1,
-      "id": 4
-    },
-    {
-      "name": "Edinburgh",
-      "userId": 1,
-      "id": 8
     },
     {
       "id": 9,
@@ -157,6 +191,11 @@
       "name": "Red Flags",
       "userId": 1,
       "id": 11
+    },
+    {
+      "name": "Jamaica",
+      "userId": 1,
+      "id": 12
     }
   ]
 }
