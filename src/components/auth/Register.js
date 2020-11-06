@@ -1,5 +1,6 @@
 import React, { useRef } from "react"
 import { useHistory } from "react-router-dom"
+import { Button } from 'semantic-ui-react'
 import "./Login.css"
 
 export const Register = (props) => {
@@ -67,7 +68,7 @@ export const Register = (props) => {
                     <input ref={email} type="email" name="email" className="form-control" placeholder="Email Address" required />
                 </fieldset>
                 <fieldset>
-                    <button type="submit"> Register </button>
+                    <Button type="submit"> Register </Button>
                 </fieldset>
             </form>
         </main>
