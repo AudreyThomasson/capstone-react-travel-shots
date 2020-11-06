@@ -2,7 +2,7 @@ import React from "react"
 import { Route, Redirect } from "react-router-dom"
 import { ApplicationViews } from "./components/ApplicationViews"
 import { NavBar } from "./components/nav/NavBar"
-import { Login } from "./components/auth/Login"
+import { Login } from "./components/auth/Login3"
 import { Register } from "./components/auth/Register"
 import { HeaderWelcome } from "./components/header/Header"
 
