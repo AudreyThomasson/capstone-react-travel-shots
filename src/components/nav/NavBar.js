@@ -1,22 +1,24 @@
 import React from 'react'
-import { Menu } from 'semantic-ui-react'
+import { Menu, Image } from 'semantic-ui-react'
 import { Link } from "react-router-dom"
-import MtOutlineLogo from '../../images/MtOutlineLogo.png'
+import CapstoneLogo from '../../images/CapstoneLogo.png'
+import "./NavBar.css"
 
 
 const menuStyle = {
     border: 'none',
     borderRadius: 0,
     boxShadow: 'none',
-    marginBottom: '1em',
+    marginBottom: '0em',
     marginLeft: '3.5em',
     marginRight: '4em',
     marginTop: '2em',
+    height: '75px'
   }
 
   
 export const NavBar = (props) => {
-    
+   
     const clearStorage = () => {
         localStorage.clear()
     }
@@ -27,8 +29,8 @@ export const NavBar = (props) => {
             borderless
             style={menuStyle}
         >
-                <Menu.Item>
-                    <img src={MtOutlineLogo} />
+                <Menu.Item >
+                    <Image src={CapstoneLogo} size="tiny" className='headerImage'/>
                 </Menu.Item>
                 
                 <Menu.Item 
