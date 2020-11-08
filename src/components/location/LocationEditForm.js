@@ -64,7 +64,7 @@ export const LocationEditForm = () => {
                         <Segment stacked>
                         <br/>
                         <Form.Input
-                            placeholder='Location Folder'
+                            placeholder={location?.name}
                             name='name'
                             onChange={(event) => handleFieldChange(event)}
                             required

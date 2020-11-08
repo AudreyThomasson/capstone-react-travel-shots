@@ -8,11 +8,13 @@ import "../photo/Photo.css"
 
 export const FolderPhotoList = () => {
 
-    const { locations, deleteLocation } = useContext(LocationContext)
+    const { locations, getLocationById, deleteLocation } = useContext(LocationContext)
     const { shots, getShotsByUserFolder, searchTerms } = useContext(PhotoContext)
     // Since you are no longer ALWAYS displaying all of the shots
     const [ filteredShots, setFiltered ] = useState([])
+    const [location, setLocation] = useState({})
     const [open, setOpen] = useState(false)
+    const [isLoading, setIsLoading] = useState(true);
     const history = useHistory();
     const { locationId } = useParams();
     
@@ -20,10 +22,17 @@ export const FolderPhotoList = () => {
     // Does the get call with the activeUser from storage and the locationId from Params
     useEffect(() => {
         getShotsByUserFolder(+(localStorage.activeUser), locationId)
-    
+        
     }, [])
 
-
+    useEffect(() => {
+        getLocationById(locationId)
+        .then(location => {
+            setLocation(location)
+            setIsLoading(false) 
+        })
+    }, [])
+    
     // useEffect dependency array with dependencies - will run if dependency changes (state)
     // Filters for searchTerms
     // searchTerms will cause a change
@@ -46,24 +55,22 @@ export const FolderPhotoList = () => {
 
     return (
         <>
+            <Header as='h2' color='blue' textAlign='center' >Your {location?.name} Collection
+            
+
+            <Dropdown icon='ellipsis horizontal' circular className='ellipsis'>
+                    <Dropdown.Menu>
+                    <Dropdown.Item
+                        onClick={() => history.push(`/locations/edit/${locationId}`)}>
+                        Edit Collection Name
+                    </Dropdown.Item>
+                    <Dropdown.Item
+                        onClick={() => setOpen(true)}>
+                        Delete Collection
+                    </Dropdown.Item>
+                    </Dropdown.Menu>
+            </Dropdown>
                 
-            <Header as='h2' color='blue' textAlign='center'>
-                Your Collection
-                <Dropdown
-                        icon='ellipsis horizontal'
-                        className='icon'
-                    >
-                        <Dropdown.Menu>
-                        <Dropdown.Item
-                            onClick={() => history.push(`/locations/edit/${locationId}`)}>
-                            Edit Collection Name
-                        </Dropdown.Item>
-                        <Dropdown.Item
-                            onClick={() => setOpen(true)}>
-                            Delete Collection
-                        </Dropdown.Item>
-                        </Dropdown.Menu>
-                    </Dropdown>
             </Header>
             <br/>
             <Card.Group itemsPerRow={4} stackable className='cardHolder'>
@@ -116,11 +123,4 @@ export const FolderPhotoList = () => {
 
         </>
     )
-}         
-                
-                
-                
-                
-                
-                
-               
+}      

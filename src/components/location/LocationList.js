@@ -3,8 +3,8 @@ import { Card, Header, Image } from 'semantic-ui-react'
 import { LocationContext } from "./LocationProvider"
 import { LocationFolder } from "./LocationFolder"
 import BlueFolder from "../../images/BlueFolder.jpg"
+import "./LocationList.css"
 
-// import "./Location.css"
 
 export const LocationList = () => {
     const { locations, getLocationsByUser } = useContext(LocationContext)
@@ -40,7 +40,7 @@ export const LocationList = () => {
             <br/>
             <Card.Group itemsPerRow={4} stackable className='cardHolder'>
             
-            <Card href={`/locations/add`} raised>
+            <Card href={`/locations/add`} raised className='card'>
                 <Image src={BlueFolder} wrapped ui ={false}/>
                 <Card.Content>
                     <Card.Header color='blue' textAlign='center' as='h3' >Add a Folder</Card.Header>
