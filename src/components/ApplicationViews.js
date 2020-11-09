@@ -42,9 +42,11 @@ export const ApplicationViews = () => {
 
             {/* List of Location Collection Folders */}
             <LocationProvider>
-                <Route exact path="/locations">
-                    <LocationList />
-                </Route>
+                <PhotoProvider>
+                    <Route exact path="/locations">
+                        <LocationList />
+                    </Route>
+                </PhotoProvider>
             </LocationProvider>
 
             {/* Adding a Location Folder */}

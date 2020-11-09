@@ -1,11 +1,3 @@
-.card {
-    background-image: url(../../images/BlueFolder.jpg);
-    background-position-x: center;
-    background-blend-mode: overlay;
-    background-repeat: no-repeat;
-    background-size: 70%;
-}
-
 .folderImage {
     height: 12em !important;
     background-image: url(../../images/BlueFolder.jpg) !important;
