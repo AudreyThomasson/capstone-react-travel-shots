@@ -25,6 +25,7 @@ export const FolderPhotoList = () => {
         
     }, [])
 
+    // For the title of the collection
     useEffect(() => {
         getLocationById(locationId)
         .then(location => {
@@ -47,11 +48,7 @@ export const FolderPhotoList = () => {
         }
     }, [searchTerms, shots])
 
-    // const Title= (filteredShots) => {
-    //     if (locationId === shot.locationId)
-    //     return 
-    //         shot.location.name}
-        
+
 
     return (
         <>

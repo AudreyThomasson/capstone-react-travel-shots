@@ -1,9 +1,10 @@
 import React, { useContext, useEffect, useState } from "react"
-import { Card, Header, Image } from 'semantic-ui-react'
+import { Card, Header, Icon } from 'semantic-ui-react'
 import { LocationContext } from "./LocationProvider"
 import { LocationFolder } from "./LocationFolder"
 import BlueFolder from "../../images/BlueFolder.jpg"
 import "./LocationList.css"
+import { PhotoProvider } from "../photo/PhotoProvider"
 
 
 export const LocationList = () => {
@@ -41,16 +42,19 @@ export const LocationList = () => {
             <Card.Group itemsPerRow={4} stackable className='cardHolder'>
             
             <Card href={`/locations/add`} raised className='card'>
-                <Image src={BlueFolder} wrapped ui ={false}/>
-                <Card.Content>
-                    <Card.Header color='blue' textAlign='center' as='h3' >Add a Folder</Card.Header>
+                <Card.Content className='folderImage'>
+                    <Card.Header  as='h3' >Add a Folder</Card.Header>
+                </Card.Content>
+                <Card.Content extra className='pictureIcon'>
+                    <Icon name='add' />
                 </Card.Content>        
             </Card>
 
             <>
+
                 {
                 locations.map(location => {
-                    return <LocationFolder key={location.id} location={location} />
+                    return <PhotoProvider key={location.id}><LocationFolder key={location.id} location={location} /></PhotoProvider>
                 })
                 }
             </>
