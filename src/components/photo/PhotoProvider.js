@@ -38,6 +38,7 @@ export const PhotoProvider = (props) => {
     const getShotById = (id) => {
         return fetch(`http://localhost:8088/shots/${id}?_expand=location&_expand=user`)
             .then(res => res.json())
+        
     }
 
     const deleteShot = shotId => {

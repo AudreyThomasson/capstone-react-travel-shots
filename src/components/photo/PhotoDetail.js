@@ -6,11 +6,8 @@ import "./extraButton.css"
 
 
 export const PhotoDetail = () => {
-    const { getShotById, deleteShot } = useContext(PhotoContext)
-	console.log('hello photo detail')
-	const [shot, setShot] = useState()
-	// const [location, setLocation] = useState({})
-	
+    const { getShotById, deleteShot, addCheckMark, removeCheckMark } = useContext(PhotoContext)
+    const [shot, setShot] = useState()
 	const {shotId} = useParams();
 	const history = useHistory();
 
@@ -18,10 +15,15 @@ export const PhotoDetail = () => {
         getShotById(shotId)
         .then((response) => {
             setShot(response)
-            console.log(shot)
-			// setLocation(response.location)
 		})
-			}, [])
+            }, [])
+            
+    // const handleCheckbox = (event, data) => {
+    //     const shotIdent = data.id
+    //     console.log(`the shot to check ${shotId}`)
+    //     console.log(data.checked)
+    //     data.checked === true ? addCheckMark(shotIdent): removeCheckMark(shotIdent)
+    // }
 
     return (
         <>
@@ -42,15 +44,15 @@ export const PhotoDetail = () => {
                         </CardContent>
                         <Card.Content extra className='extraBox'>
                             added by: {shot?.origSaver}
-                            {/* <segment/> */}
+                             
                             {/* <Checkbox 
-                                        disabled
-                                        id={shot?.id}
-                                        name='shot'
-                                        label='Shot'
-                                        // onChange={handleCheckbox}
-                                        defaultChecked={shot?.done}
-                                    /> */}
+                            id={shot?.id}
+                            name='shot'
+                            label='Shot'
+                            onChange={handleCheckbox}
+                            defaultChecked={shot?.done}
+                            className='checkbox' /> */}
+                        
                         </Card.Content>
                     </Card>
 
@@ -83,34 +85,3 @@ export const PhotoDetail = () => {
         </>       
     )
 }
-
-
-
-
-
-
-
-
-   /* const [shot, setShot] = useState({})
-
-    const handleCheckbox = (event, data) => {
-        const newShot = { ...shot }
-        newShot[data.name] = data.value
-        setShot(newShot)
-        updateShot()
-}
-
-        {/* //PUT - update card checkbox in database */
-    /* const updateShot = () => (
-        {
-            id: shot.id,
-            userId: shot.userId,
-            origSaverId: shot.origSaverId, 
-            locationId: shot.locationId,
-            photoTitle: shot.photoTitle,
-            pictureUrl: shot.pictureUrl,
-            sourceUrl: shot.sourceUrl, 
-            notes: shot.notes, 
-            done: shot.done
-        }
-    )  */
