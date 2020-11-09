@@ -59,7 +59,7 @@
       "pictureUrl": "https://res.cloudinary.com/audreyrt/image/upload/v1603745275/travelshots/ckicro4bnfzy9jepbmrm.jpg",
       "sourceUrl": "insta",
       "notes": "shoot big ben from across the river",
-      "done": false
+      "done": true
     },
     {
       "userId": 1,
@@ -106,6 +106,7 @@
       "id": 14
     },
     {
+      "id": 15,
       "userId": 1,
       "origSaver": "Audrey",
       "locationId": 1,
@@ -113,8 +114,7 @@
       "pictureUrl": "https://res.cloudinary.com/audreyrt/image/upload/v1604067009/travelshots/h4fh1uq6xaxe7irlq71i.jpg",
       "sourceUrl": "insta",
       "notes": "far off shot of whole tower",
-      "done": false,
-      "id": 15
+      "done": true
     },
     {
       "id": 16,

@@ -1,5 +1,5 @@
 import React, { useState, useContext, useEffect } from 'react'
-import { Form, Grid, Header, Segment, Button, Image } from 'semantic-ui-react'
+import { Form, Grid, Header, Segment, Button, Image, Checkbox } from 'semantic-ui-react'
 import { useHistory, useParams } from 'react-router-dom'
 import { PhotoContext } from './PhotoProvider'
 import { LocationContext } from '../location/LocationProvider'
@@ -29,6 +29,12 @@ export const PhotoForm = () => {
         newShot[data.name] = data.value
         setShot(newShot)
     }
+
+//     const handleCheckbox = (event, data) => {
+//         const newShot = { ...shot }
+//         newShot[data.name] = data.checked
+//         setShot(newShot)
+// }
 
     const handleAddition = (event, data) => {
         const LocationToSave = {
@@ -75,7 +81,7 @@ export const PhotoForm = () => {
                     pictureUrl: shot.pictureUrl,
                     sourceUrl: shot.sourceUrl, 
                     notes: shot.notes, 
-                    done: false
+                    done: shot.done
                 })
                 .then(() => history.push(`/detail/${shot.id}`))
             }else {
@@ -88,7 +94,7 @@ export const PhotoForm = () => {
                     pictureUrl: localStorage.travelImage,
                     sourceUrl: shot.sourceUrl, 
                     notes: shot.notes, 
-                    done: false
+                    done: shot.done
                 })
                 .then(() => history.push(`/home`))
             }
@@ -167,6 +173,14 @@ export const PhotoForm = () => {
                             autoFocus
                             defaultValue={shot?.notes}
                         />
+                         {/* <Checkbox 
+                            id={shot?.id}
+                            name='done'
+                            label='Shot'
+                            onChange={handleCheckbox}
+                            defaultChecked={shot?.done}
+                            className='checkbox'
+                        /> */}
                         
                         </Segment>
                     </Form>

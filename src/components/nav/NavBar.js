@@ -49,10 +49,10 @@ export const NavBar = (props) => {
                 />
 
                 <Menu.Menu position='right'>
-                    <Menu.Item
+                    {/* <Menu.Item
                     name='Browse for Inspiration'
                     as={Link} to='/browse'
-                    />
+                    /> */}
 
                     <Menu.Item
                     name='Log Out'
