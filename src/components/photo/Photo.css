@@ -12,3 +12,8 @@
     color: black !important;
     font-size: large !important;
 }
+
+.checkbox {
+    display: flex !important;
+    justify-content: flex-end !important;
+}

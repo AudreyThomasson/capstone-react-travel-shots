@@ -26,7 +26,7 @@
       "pictureUrl": "https://www.visitbritainshop.com/world/~/media/6955b05a4be7467b8db36a68c39fdd51.ashx?as=0&h=349&w=620",
       "sourceUrl": "https://www.visitbritainshop.com/world/tower-bridge-exhibition/",
       "notes": "shoot from this location",
-      "done": false
+      "done": true
     },
     {
       "id": 2,
@@ -37,7 +37,7 @@
       "pictureUrl": "https://www.visitbritainshop.com/world/~/media/a1b4f9943a2246e0b6f37b2170b99236.ashx?as=0&h=349&w=620",
       "sourceUrl": "https://www.visitbritainshop.com/world/tower-bridge-exhibition/",
       "notes": "find the tower sign",
-      "done": false
+      "done": true
     },
     {
       "id": 3,
@@ -170,7 +170,7 @@
     {
       "id": 2,
       "userId": 1,
-      "name": "London Girls Trip"
+      "name": "London Trip"
     },
     {
       "name": "Yosemite",
