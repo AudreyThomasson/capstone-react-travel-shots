@@ -58,7 +58,7 @@ export const FolderPhotoList = () => {
             <Header as='h2' color='blue' textAlign='center' >Your {location?.name} Collection
             
 
-            <Dropdown icon='ellipsis horizontal' circular className='ellipsis'>
+            <Dropdown icon='ellipsis horizontal' className='ellipsis'>
                     <Dropdown.Menu>
                     <Dropdown.Item
                         onClick={() => history.push(`/locations/edit/${locationId}`)}>

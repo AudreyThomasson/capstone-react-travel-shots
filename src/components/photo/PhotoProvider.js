@@ -55,6 +55,31 @@ export const PhotoProvider = (props) => {
             body: JSON.stringify(shot)
         })
     }
+
+    const addCheckMark = (shotId) => {
+        return fetch(`http://localhost:8088/shots/${shotId}`, {
+            method: 'PATCH',
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                done: true
+            })
+        })
+    }
+
+    const removeCheckMark = (shotId) => {
+        return fetch(`http://localhost:8088/shots/${shotId}`, {
+            method: 'PATCH',
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                done: false
+            })
+        })
+    }
+
     /*
         You return a context provider which has the
         `locations` state, the `addLocation` function,
@@ -63,7 +88,7 @@ export const PhotoProvider = (props) => {
     */
     return (
         <PhotoContext.Provider value={{
-            shots, getShots, getShotsByUserFolder, addShot, getShotById, deleteShot, updateShot, searchTerms, setSearchTerms
+            shots, getShots, getShotsByUserFolder, addShot, getShotById, deleteShot, updateShot, addCheckMark, removeCheckMark, searchTerms, setSearchTerms
         }}>
             {props.children}
         </PhotoContext.Provider>

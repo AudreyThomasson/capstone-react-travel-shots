@@ -31,6 +31,7 @@ export const PhotoList = () => {
         }
     }, [searchTerms, shots])
 
+ 
 
 
     return (
