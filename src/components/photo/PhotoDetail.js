@@ -1,12 +1,12 @@
 import React, { useContext, useEffect, useState } from "react"
 import { useParams, useHistory } from "react-router-dom"
-import { Card, Image, Checkbox, Button, Grid, Header, Form, CardContent } from 'semantic-ui-react'
+import { Card, Image, Button, Grid, Header, Form, CardContent } from 'semantic-ui-react'
 import { PhotoContext } from "./PhotoProvider"
 import "./extraButton.css"
 
 
 export const PhotoDetail = () => {
-    const { getShotById, deleteShot, addCheckMark, removeCheckMark } = useContext(PhotoContext)
+    const { getShotById, deleteShot } = useContext(PhotoContext)
     const [shot, setShot] = useState()
 	const {shotId} = useParams();
 	const history = useHistory();
@@ -18,12 +18,7 @@ export const PhotoDetail = () => {
 		})
             }, [])
             
-    // const handleCheckbox = (event, data) => {
-    //     const shotIdent = data.id
-    //     console.log(`the shot to check ${shotId}`)
-    //     console.log(data.checked)
-    //     data.checked === true ? addCheckMark(shotIdent): removeCheckMark(shotIdent)
-    // }
+
 
     return (
         <>
@@ -43,16 +38,7 @@ export const PhotoDetail = () => {
                             <Card.Description>Notes:  {shot?.notes}</Card.Description>
                         </CardContent>
                         <Card.Content extra className='extraBox'>
-                            added by: {shot?.origSaver}
-                             
-                            {/* <Checkbox 
-                            id={shot?.id}
-                            name='shot'
-                            label='Shot'
-                            onChange={handleCheckbox}
-                            defaultChecked={shot?.done}
-                            className='checkbox' /> */}
-                        
+                            added by: {shot?.origSaver}                        
                         </Card.Content>
                     </Card>
 

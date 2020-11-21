@@ -2,7 +2,6 @@ import React, { useContext, useEffect, useState } from "react"
 import { Card, Header, Icon } from 'semantic-ui-react'
 import { LocationContext } from "./LocationProvider"
 import { LocationFolder } from "./LocationFolder"
-import BlueFolder from "../../images/BlueFolder.jpg"
 import "./LocationList.css"
 import { PhotoProvider } from "../photo/PhotoProvider"
 
