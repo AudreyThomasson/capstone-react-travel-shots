@@ -26,7 +26,7 @@
       "pictureUrl": "https://www.visitbritainshop.com/world/~/media/6955b05a4be7467b8db36a68c39fdd51.ashx?as=0&h=349&w=620",
       "sourceUrl": "https://www.visitbritainshop.com/world/tower-bridge-exhibition/",
       "notes": "shoot from this location",
-      "done": true
+      "done": false
     },
     {
       "id": 2,
@@ -147,7 +147,7 @@
       "pictureUrl": "https://res.cloudinary.com/audreyrt/image/upload/v1604068077/travelshots/fgayaefb8vgywipcnul6.jpg",
       "sourceUrl": "insta",
       "notes": "Arc de Triomphe",
-      "done": false
+      "done": true
     },
     {
       "userId": 1,
@@ -159,18 +159,209 @@
       "notes": "plan visit to blue hole",
       "done": false,
       "id": 19
+    },
+    {
+      "userId": 1,
+      "origSaver": "Audrey",
+      "locationId": 12,
+      "photoTitle": "Dolphin kiss",
+      "pictureUrl": "https://res.cloudinary.com/audreyrt/image/upload/v1604976126/travelshots/dzuzmwdqjctv4pex2wpd.jpg",
+      "sourceUrl": "google",
+      "notes": "Remember to bring underwater camera",
+      "id": 20
+    },
+    {
+      "id": 21,
+      "userId": 1,
+      "origSaver": "Audrey",
+      "locationId": 2,
+      "photoTitle": "Buckingham Palace Flags",
+      "pictureUrl": "https://res.cloudinary.com/audreyrt/image/upload/v1604980290/travelshots/rtj3nhkotg7e3a7mrrso.jpg",
+      "sourceUrl": "google",
+      "notes": "Try to go during a special event so the flags will be out along the boulevard leading to the palace."
+    },
+    {
+      "userId": 1,
+      "origSaver": "Audrey",
+      "locationId": 2,
+      "photoTitle": "Buckingham Palace Gardens",
+      "pictureUrl": "https://res.cloudinary.com/audreyrt/image/upload/v1604980356/travelshots/dxgpf85sspxf44tguhto.jpg",
+      "sourceUrl": "google",
+      "notes": "Shoot the palace from an angle across the gardens",
+      "id": 22
+    },
+    {
+      "userId": 1,
+      "origSaver": "Audrey",
+      "locationId": 2,
+      "photoTitle": "Buckingham Palace Gates",
+      "pictureUrl": "https://res.cloudinary.com/audreyrt/image/upload/v1604980409/travelshots/ghk1zspnvcdsb6evdgzp.jpg",
+      "sourceUrl": "google",
+      "notes": "Shoot a close up of the royal crests on the gates.",
+      "id": 23
+    },
+    {
+      "userId": 1,
+      "origSaver": "Audrey",
+      "locationId": 13,
+      "photoTitle": "Cat and Custard Pot Pub in Shipton Moyne- Cotswolds",
+      "pictureUrl": "https://res.cloudinary.com/audreyrt/image/upload/v1604980485/travelshots/q18h5o93gf5mktkotxux.jpg",
+      "sourceUrl": "google",
+      "notes": "Quaint pup Cat and Custard Pot in Shipton Moyne in Cotswolds",
+      "id": 24
+    },
+    {
+      "userId": 1,
+      "origSaver": "Audrey",
+      "locationId": 13,
+      "photoTitle": "Highgrove Castle gardens, Prince Charles",
+      "pictureUrl": "https://res.cloudinary.com/audreyrt/image/upload/v1604980656/travelshots/jatcvjzpjwizetumfteh.jpg",
+      "sourceUrl": "google",
+      "notes": "Highgrove Castle of Prince Charles in the Cotswolds.",
+      "id": 25
+    },
+    {
+      "userId": 1,
+      "origSaver": "Audrey",
+      "locationId": 13,
+      "photoTitle": "Cotswolds Village Bridge",
+      "pictureUrl": "https://res.cloudinary.com/audreyrt/image/upload/v1604980746/travelshots/piukptjszvztcajgoqpq.jpg",
+      "sourceUrl": "google",
+      "notes": "find this bridge in the Cotwolds",
+      "id": 26
+    },
+    {
+      "userId": 1,
+      "origSaver": "Audrey",
+      "locationId": 2,
+      "photoTitle": "Tower of London",
+      "pictureUrl": "https://res.cloudinary.com/audreyrt/image/upload/v1604980808/travelshots/coy4nm9evmibyrimn8s6.jpg",
+      "sourceUrl": "google",
+      "notes": "Tower of London shot from across the water.",
+      "id": 27
+    },
+    {
+      "userId": 1,
+      "origSaver": "Audrey",
+      "locationId": 2,
+      "photoTitle": "Tower of London Bridge",
+      "pictureUrl": "https://res.cloudinary.com/audreyrt/image/upload/v1604980862/travelshots/gkw05lpil8mo2isftld3.jpg",
+      "sourceUrl": "google",
+      "notes": "Research the location of this bridge in the tower complex.",
+      "id": 28
+    },
+    {
+      "userId": 1,
+      "origSaver": "Audrey",
+      "locationId": 1,
+      "photoTitle": "Musée du Quai Branly",
+      "pictureUrl": "https://res.cloudinary.com/audreyrt/image/upload/v1604981301/travelshots/hglghmqhjx9lcjihnd3u.jpg",
+      "sourceUrl": "ArchDigest.com",
+      "notes": "Musée du Quai Branly in Paris. The “green wall” on the exterior was designed and planted by Gilles Clément and Patrick Blanc ",
+      "id": 29
+    },
+    {
+      "userId": 1,
+      "origSaver": "Audrey",
+      "locationId": 1,
+      "photoTitle": "Eiffel Tower From Below",
+      "pictureUrl": "https://res.cloudinary.com/audreyrt/image/upload/v1604981363/travelshots/ryp5yh4zuorf2ydfbptx.jpg",
+      "sourceUrl": "ArchDigest.com",
+      "notes": "Shoot the tower from the center of the base",
+      "id": 30,
+      "done": true
+    },
+    {
+      "userId": 1,
+      "origSaver": "Audrey",
+      "locationId": 1,
+      "photoTitle": "Palais Royal in Paris",
+      "pictureUrl": "https://res.cloudinary.com/audreyrt/image/upload/v1604981603/travelshots/q17ybcymsqfkc4yeitu5.jpg",
+      "sourceUrl": "IN Places City Guide",
+      "notes": "wake up extra early to photograph Palais Royal nearly empty.",
+      "id": 31
+    },
+    {
+      "userId": 1,
+      "origSaver": "Audrey",
+      "locationId": 1,
+      "photoTitle": "Left Bank Flower Shop in Paris",
+      "pictureUrl": "https://res.cloudinary.com/audreyrt/image/upload/v1604982846/travelshots/dwl37sdqvhnyeegktxvv.jpg",
+      "sourceUrl": "Rebecca Plotnick Photography",
+      "notes": "Oz Garden Flamant Left Bank Flower Shop",
+      "id": 32
+    },
+    {
+      "userId": 1,
+      "origSaver": "Audrey",
+      "locationId": 1,
+      "photoTitle": "Tuileries Garden Autumn Light",
+      "pictureUrl": "https://res.cloudinary.com/audreyrt/image/upload/v1604982961/travelshots/daljhhi4f7stc8arwe7r.jpg",
+      "sourceUrl": "Rebecca Plotnick Photography",
+      "notes": "shoot the garden from almost level with the ground",
+      "id": 33
+    },
+    {
+      "userId": 1,
+      "origSaver": "Audrey",
+      "locationId": 1,
+      "photoTitle": "Angelina Hot Chocolate Paris",
+      "pictureUrl": "https://res.cloudinary.com/audreyrt/image/upload/v1604983113/travelshots/abvyea9tmqhqm23rdvfx.jpg",
+      "sourceUrl": "Rebecca Plotnick",
+      "notes": "There are a few of these shops around the city. This one is on Rue de Bac on The Left Bank.",
+      "id": 34
+    },
+    {
+      "userId": 1,
+      "origSaver": "Audrey",
+      "locationId": 1,
+      "photoTitle": "Pont des Arts Bridge Paris",
+      "pictureUrl": "https://res.cloudinary.com/audreyrt/image/upload/v1604983299/travelshots/gdvn2p75hhtekrum8fzo.jpg",
+      "sourceUrl": "Rebecca Plotnick Photography",
+      "notes": "Pont des Arts Bridge in Paris when the locks were still attached.",
+      "id": 35
+    },
+    {
+      "userId": 1,
+      "origSaver": "Audrey",
+      "locationId": 1,
+      "photoTitle": "Seine Bridge Archway in Paris",
+      "pictureUrl": "https://res.cloudinary.com/audreyrt/image/upload/v1604983461/travelshots/rav5zxj9ply14h1dhn5t.jpg",
+      "sourceUrl": "Rebecca Plotnick Photography",
+      "notes": "Archway under a bridge along the river Seine",
+      "id": 36
+    },
+    {
+      "id": 37,
+      "userId": 1,
+      "origSaver": "Audrey",
+      "locationId": 14,
+      "photoTitle": "Great Tew Thatched Cottage",
+      "pictureUrl": "https://res.cloudinary.com/audreyrt/image/upload/v1604984640/travelshots/ocdavam9ojouuxudyl6e.jpg",
+      "sourceUrl": "tripsaavy",
+      "notes": "Great Tew- a village of Thatched Cottages Near Blenheim Palace"
+    },
+    {
+      "userId": 1,
+      "origSaver": "Audrey",
+      "locationId": 14,
+      "photoTitle": "Cottage in Wolvey",
+      "pictureUrl": "https://res.cloudinary.com/audreyrt/image/upload/v1605027047/travelshots/ors4ysuljk3sqxghv4wx.jpg",
+      "sourceUrl": "instagram",
+      "notes": "research to find the address",
+      "id": 38
     }
   ],
   "locations": [
     {
       "id": 1,
       "userId": 1,
-      "name": "Paris Visit in August"
+      "name": "Paris Visit in October"
     },
     {
       "id": 2,
       "userId": 1,
-      "name": "London Trip"
+      "name": "London  Trip"
     },
     {
       "name": "Yosemite",
@@ -188,14 +379,19 @@
       "id": 10
     },
     {
-      "name": "Red Flags",
-      "userId": 1,
-      "id": 11
-    },
-    {
       "name": "Jamaica",
       "userId": 1,
       "id": 12
+    },
+    {
+      "name": "Cotswolds",
+      "userId": 1,
+      "id": 13
+    },
+    {
+      "name": "Cottage",
+      "userId": 1,
+      "id": 14
     }
   ]
 }
